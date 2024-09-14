@@ -1,0 +1,47 @@
+# Default compiler
+FC = gfortran
+
+# Location of SPEEDY common files
+common = ../common
+hybrid = ../hybrid
+date_time = ../datetime-fortran/src
+
+# Compilation arguments
+COMPARGS = -O3 -fdefault-real-8 -fconvert=big-endian -frecord-marker=4 -I/skydata2/troyarcomano/.conda/envs/cdo_env/include -I/skydata2/troyarcomano/.conda/envs/cdo_env/include -L/skydata2/troyarcomano/.conda/envs/cdo_env/lib -lnetcdff -lnetcdf -lnetcdf #-I${EBROOTNETCDFMINFORTRAN}/include -L${EBROOTNETCDFMINFORTRAN}/lib64 -lnetcdff -L${EBROOTNETCDF}/lib64 -L${EBROOTGCCCORE}/lib64 -L${EBROOTGCCCORE}/lib -lnetcdf -lnetcdf -ldl -lm -lm -lpthread -I${HDF5_DIR}/include -L${HDF5_DIR}/lib -lhdf5_fortran -lhdf5
+
+# Define all files that observation operator depends on
+common_depend =  $(common)/common_speedy.o $(common)/common_obs_speedy.o $(common)/common.o $(common)/SFMT.o $(hybrid)/mod_io.o $(hybrid)/mod_utilities.o $(hybrid)/res_domain.o $(hybrid)/stringtype.o  $(date_time)/datetime_module.o  troy_stuff.o
+
+mod_files = $(hybrid)/mod_io.mod $(hybrid)/mod_utilities.mod $(hybrid)/resdomain.mod $(hybrid)/stringtype.mod $(date_time)/datetime_module.mod
+obj_files = $(hybrid)/mod_io.o $(hybrid)/mod_utilities.o $(hybrid)/res_domain.o $(hybrid)/stringtype.o  $(date_time)/datetime_module.o
+
+# Main compilation rule
+obsmake:obsmake.o $(common_depend)
+	$(FC) $(COMPARGS) -o $@ $^
+
+
+obsmake.o: $(common_depend) 
+
+troy_stuff.o: move_mod move_o
+
+$(common)/common.o: $(common)/SFMT.o
+$(common)/common_speedy.o: $(common)/common.o
+
+
+
+# Build rules
+move_mod: 
+	cp $(mod_files) .
+
+move_o: 
+	cp $(obj_files) .
+$(common)/%.o: $(common)/%.f90
+	echo common_depend
+	$(FC) $(COMPARGS) -c $< -o $@
+
+%.o: %.f90
+	$(FC) $(COMPARGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f *.o *.mod $(common)/*.o $(common)/*.mod

@@ -1,0 +1,1064 @@
+import numpy as np
+import numpy.ma as ma
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+from matplotlib.ticker import NullFormatter
+from netCDF4 import Dataset
+import cartopy.crs as ccrs
+from cartopy.util import add_cyclic_point
+import xarray as xr
+import glob
+from datetime import datetime, timedelta
+from numba import jit
+
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/40_member_speedy_covar1_5_20110101_20120901/mean.nc'
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_analysis_2011_01_to_2012_05.nc'
+#'/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_analysis_2012_01_to_2012_09.nc'
+
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/new_hybrid_analysis_covar_1_5_20110101_20120105/mean.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/hybrid_uniform_Jan2011_crash_5_29.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+level = 0.2 #0.2#0.95#0.51
+level_era = 2 #2#7 #4
+
+time_slice = slice(startdate,enddate)
+
+var_era = 'Temperature'#'Specific_Humidity'#'Temperature' #'V-wind'
+var_da = 't' #'q'#'t'#'v'
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481#240  #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse = np.zeros((length))
+analysis_rmse_speedy = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+for i in range(length):
+    analysis_rmse[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+  
+averaged_error = np.average(abs(analysis_error[24::,:,:]),axis=0)
+averaged_error_speedy = np.average(abs(analysis_error_speedy[24::,:,:]),axis=0)
+
+lat = ds_analysis_mean.lat.values
+lon = ds_analysis_mean.lon.values
+
+lons2d, lats2d = np.meshgrid(lon,lat)
+
+#fig = plt.figure(figsize=(6,10))
+#''' ax1 ===>  Makes map of hybrid letkf analysis error  '''
+#ax1 = plt.subplot(311,projection=ccrs.PlateCarree())
+#ax1.coastlines()
+#
+#''' Multiply averaged_error by 1000 for spec_humid only'''
+#
+#cyclic_data, cyclic_lons = add_cyclic_point(averaged_error*1000, coord=lon)
+#lons2d,lats2d = np.meshgrid(cyclic_lons,lat)
+#
+#cf = ax1.contourf(lons2d, lats2d,cyclic_data,levels=np.arange(0,3.1,.05),extend='both')
+#
+#plt.colorbar(cf,label='(g/kg)',fraction=0.046, pad=0.04)
+#ax1.set_title('Newly Trained COV 1.5\nHybrid LETKF Analysis Error\nLow Level Specific Humidity')
+#
+#diff = averaged_error - averaged_error_speedy
+#cyclic_data, cyclic_lons = add_cyclic_point(diff, coord=lon)
+#lons2d,lats2d = np.meshgrid(cyclic_lons,lat)
+#'''ax2 ===>  makes plot of speedt letkf analysis error '''
+#ax2 = plt.subplot(312,projection=ccrs.PlateCarree())
+#ax2.coastlines()
+#cyclic_data, cyclic_lons = add_cyclic_point(averaged_error_speedy*1000, coord=lon)
+#lons2d,lats2d = np.meshgrid(cyclic_lons,lat)
+#
+#cf = ax2.contourf(lons2d, lats2d,cyclic_data,levels=np.arange(0,3.1,.05),extend='both')
+#plt.colorbar(cf,label='(g/kg)',fraction=0.046, pad=0.04)
+#ax2.set_title('SPEEDY LETKF COV 1.5 Analysis Error\nLow Level Specific Humidity')
+#''' Times 1000 on diff for Specific Humidity to be in g/kg'''
+#diff = (averaged_error - averaged_error_speedy)
+#cyclic_data, cyclic_lons = add_cyclic_point(diff*1000, coord=lon)
+#lons2d,lats2d = np.meshgrid(cyclic_lons,lat)
+#
+#'''ax3 ==> Makes map of difference of hybrid and speedy '''
+#
+#ax3 = plt.subplot(313,projection=ccrs.PlateCarree())
+#ax3.coastlines()
+#ax3.set_title('Difference (Hybrid - SPEEDY)')
+#cf = ax3.contourf(lons2d, lats2d,cyclic_data,levels=np.arange(-2,2.1,.025),extend='both',cmap='seismic')
+#
+#plt.colorbar(cf,label='(g/kg)',fraction=0.046, pad=0.04)
+#plt.tight_layout()
+##plt.savefig("water/MAP_SPECIFIC_HUMIDITY_NEW_HYBRID.pdf",dpi=1200)
+##plt.savefig("water/MAP_SPECIFIC_HUMIDITY_NEW_HYBRID.jpeg",dpi=1200)
+##plt.show()
+#
+#
+#x = np.arange(0,length)
+#
+#base = datetime(2011,1,1,0)
+#date_list = [base + timedelta(days=x/4) for x in range(length)]
+#plt.figure(figsize=(16,6))
+#plt.plot(date_list,analysis_rmse,color='g',linewidth=.75,label='RMSE Hybrid') 
+#plt.axhline(y=np.average(analysis_rmse[20::]), color='g', linestyle='--',label="Average RMSE Hybrid")
+#plt.plot(date_list,analysis_rmse_speedy,color='k',linewidth=.75,label='RMSE SPEEDY')
+#plt.axhline(y=np.average(analysis_rmse_speedy[20::]), color='k', linestyle='--',label="Average RMSE SPEEDY")
+#
+#print('average rmse Hybrid', np.average(analysis_rmse[20::]))
+#print('average rmse SPEEDY', np.average(analysis_rmse_speedy[20::]))
+##plt.plot(date_list,global_average_ensemble_spread,label='Ensemble Spread')
+##plt.title('LETKF Analysis Error\n Low Level Specific Humidity')
+#plt.title('COV 1.5 New Hybrid & SPEEDY \nLETKF Analysis Error\n Low Level Specific Humidity')
+##plt.title('Ensemble Spread\nModel Level 4 Temperature')
+#plt.legend()
+#plt.xlabel('Date')
+#plt.ylabel('Analysis Error')
+##plt.ylabel('Analysis Error (kg/kg)')
+##plt.ylabel('Ensemble Spread (K)')
+## plt.xticks(date_list[::305])
+#plt.xlim([datetime(2011, 1, 1,0), datetime(2011, 5, 1,0)])
+#plt.ylim(0.001,0.002)
+#plt.tight_layout()
+##plt.savefig("water/fresh_plot1.pdf",dpi=1200)
+##plt.savefig("water/fresh_plot1.jpeg",dpi=1200)
+##plt.show()
+
+'''Second Calculation of Average 40 Member Calc'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_analysis_2011_01_to_2012_05.nc'
+#'/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_analysis_2012_01_to_2012_09.nc'
+
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/hybrid_uniform_Jan2011_crash_5_29.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+#level = 0.95 #0.2#0.95#0.51
+#level_era = 7 #2#7 #4
+
+time_slice = slice(startdate,enddate)
+
+#var_era = 'Specific_Humidity'#'Temperature' #'V-wind'
+#var_da =  'q'#'t'#'q'
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481#240  #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_2 = np.zeros((length))
+analysis_rmse_speedy_2 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_2 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_2 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+for i in range(length):
+    analysis_rmse_2[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_2[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_2[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_2[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+  
+averaged_error_2 = np.average(abs(analysis_error_2[24::,:,:]),axis=0)
+averaged_error_speedy_2 = np.average(abs(analysis_error_speedy_2[24::,:,:]),axis=0)
+
+lat = ds_analysis_mean.lat.values
+lon = ds_analysis_mean.lon.values
+
+lons2d, lats2d = np.meshgrid(lon,lat)
+'''3rd calculation for 40 member covariance 1.5'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/40_member_speedy_covar1_5_20110101_20120901/mean.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/40member_hybridcovar15_20110101_20110529_crash/mean.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+#level = 0.95 #0.2#0.95#0.51
+#level_era = 7 #2#7 #4
+
+time_slice = slice(startdate,enddate)
+
+#var_era = 'Specific_Humidity'#'Temperature' #'V-wind'
+#var_da =  'q'#'t'#'q'
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481#240  #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_3 = np.zeros((length))
+analysis_rmse_speedy_3 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_3 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_3 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+for i in range(length):
+    analysis_rmse_3[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_3[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_3[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_3[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+  
+averaged_error_3 = np.average(abs(analysis_error_3[24::,:,:]),axis=0)
+averaged_error_speedy_3 = np.average(abs(analysis_error_speedy_3[24::,:,:]),axis=0)
+
+lat = ds_analysis_mean.lat.values
+lon = ds_analysis_mean.lon.values
+'''4th calculation for New Hybrid with covar 1.3'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,12,31,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/30member_speedy_20110101_20120503/mean.nc'
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_analysis_2011_01_to_2012_05.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/new_hybrid_analysis_covar_1_3_20110101_20111231/mean.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+time_slice=slice(startdate,enddate)
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 1457#481 240  #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_4 = np.zeros((length))
+analysis_rmse_speedy_4 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_4 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_4 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_analysis_speedy))
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+for i in range(length):
+    analysis_rmse_4[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_4[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_4[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_4[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+  
+averaged_error_4 = np.average(abs(analysis_error_4[24::,:,:]),axis=0)
+averaged_error_speedy_4 = np.average(abs(analysis_error_speedy_4[24::,:,:]),axis=0)
+
+
+'''5th CALCULATION OF SPEEDY1.9,randomhybrid,,NEW HYBRID trained on 1.5, ran on 1.7'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/speedy_1_9_uniform_20110101_20110501/mean.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/new_hybrid_covar_1_7_20110101_20110301/mean.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+time_slice = slice(startdate,enddate)
+
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+#length = 237#481 240  #1450 ##338 #160#64#177#1400#455
+length=481
+analysis_rmse_5 = np.zeros((length))
+analysis_rmse_speedy_5 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_5 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_5 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_analysis_speedy))
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+#length = 237
+for i in range(length):
+    analysis_rmse_5[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_5[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_5[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_5[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+
+averaged_error_5 = np.average(abs(analysis_error_5[24::,:,:]),axis=0)
+averaged_error_speedy_5 = np.average(abs(analysis_error_speedy_5[24::,:,:]),axis=0)
+
+'''6th CALCULATION OF hybrid 1.5,1.9'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/speedy_analysis_covar_1_7_20110101_20110301/mean.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/hybrid_1_5_1_9_20110101_20110501/mean.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/new_hybrid_covar_1_9_20110101_20110301/mean.nc'
+
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481#481 240  #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_6 = np.zeros((length))
+analysis_rmse_speedy_6 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_6 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_6 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_analysis_speedy))
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+#length = 237
+for i in range(length):
+    analysis_rmse_6[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_6[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_6[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_6[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+
+averaged_error_6 = np.average(abs(analysis_error_6[24::,:,:]),axis=0)
+averaged_error_speedy_6 = np.average(abs(analysis_error_speedy_6[24::,:,:]),axis=0)
+
+
+
+'''7th CALCULATION OF hybrid 1.5,1.1'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/speedy_analysis_covar_1_7_20110101_20110301/mean.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/hybrid_1_5_1_1_20110101_20110501/mean.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481 #240  #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_7 = np.zeros((length))
+analysis_rmse_speedy_7 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_7 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_7 = np.zeros((length,ygrid,xgrid))
+print('7 here')
+print(np.shape(temp_500_analysis_speedy))
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+#length = 481
+for i in range(length):
+    analysis_rmse_7[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_7[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_7[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_7[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+
+averaged_error_7 = np.average(abs(analysis_error_7[24::,:,:]),axis=0)
+averaged_error_speedy_7 = np.average(abs(analysis_error_speedy_7[24::,:,:]),axis=0)
+
+
+'''8th CALCULATION OF hybrid 1.3,1.1'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/speedy_analysis_covar_1_7_20110101_20110301/mean.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/hybrid_1_3_1_7_20110101_20110501/mean.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+print(np.shape(temp_500_analysis_speedy))
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481#1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_8 = np.zeros((length))
+analysis_rmse_speedy_8 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_8 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_8 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_analysis_speedy))
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+#length = 481
+for i in range(length):
+    analysis_rmse_8[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_8[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_8[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_8[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+
+averaged_error_8 = np.average(abs(analysis_error_8[24::,:,:]),axis=0)
+averaged_error_speedy_8 = np.average(abs(analysis_error_speedy_8[24::,:,:]),axis=0)
+
+
+
+'''9th CALCULATION OF hybrid 1.3,1.9'''
+@jit()
+def rms(true,prediction):
+    return np.sqrt(np.nanmean((prediction-true)**2))
+
+@jit()
+def rms_tendency(variable,hours):
+    variable_tendency = np.zeros((hours))
+    variable = np.exp(variable) * 1000.0
+
+    for i in range(hours):
+        variable_tendency[i] = np.sqrt(np.mean((variable[i+1] - variable[i])**2.0))
+
+    return variable_tendency
+
+def latituded_weighted_rmse(true,prediction,lats):
+    diff = prediction-true
+
+    weights = np.cos(np.deg2rad(lats))
+
+    weights2d = np.zeros(np.shape(diff))
+
+    diff_squared = diff**2.0
+    #weights = np.ones((10,96))
+
+    weights2d = np.tile(weights,(96,1))
+    weights2d = np.transpose(weights2d)
+
+    masked = np.ma.MaskedArray(diff_squared, mask=np.isnan(diff_squared))
+    weighted_average = np.ma.average(masked,weights=weights2d)
+
+    return np.sqrt(weighted_average)
+
+start_year = 2011
+
+startdate = datetime(2011,1,1,0)
+enddate = datetime(2011,5,1,0)
+
+nature_file = f'/skydata2/troyarcomano/ERA_5/{start_year}/era_5_y{start_year}_regridded_mpi_fixed_var.nc'
+
+analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_speedy_jan1_dec31_2011.nc'
+#analysis_file_speedy = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/speedy_analysis_covar_1_7_20110101_20110301/mean.nc'
+#analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/uniform_20member_hybrid_jan1_dec31_2011.nc'
+analysis_file = '/skydata2/dylanelliott/letkf-hybrid-speedy/DATA/uniform_letkf_anal/hybrid_1_3_1_9_20110101_20110501/mean.nc'
+#'/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_mean.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+spread_file =  '/skydata2/troyarcomano/letkf-hybrid-speedy/experiments/hybrid_first_test/anal_sprd.nc' #'/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc' #'~/stable_run/rtpp_0_3.nc' # '/skydata2/troyarcomano/letkf-hybrid-speedy/DATA/ensemble/anal/mean/test.nc'
+
+ds_nature = xr.open_dataset(nature_file)
+ds_analysis_mean = xr.open_dataset(analysis_file)
+ds_analysis_mean_speedy = xr.open_dataset(analysis_file_speedy)
+ds_spread = xr.open_dataset(spread_file)
+
+lats = ds_nature.Lat
+
+temp_500_nature = ds_nature[var_era].sel(Sigma_Level=level_era).values
+temp_500_analysis = ds_analysis_mean[var_da].sel(lev=level).values
+temp_500_analysis_speedy = ds_analysis_mean_speedy[var_da].sel(lev=level,time=time_slice).values
+temp_500_spread = ds_spread[var_da].sel(lev=level).values
+
+ps_nature = ds_nature['logp'].values
+ps_nature = 1000.0 * np.exp(ps_nature)
+ps_analysis = ds_analysis_mean['ps'].values/100.0
+
+xgrid = 96
+ygrid = 48
+length = 481 #1450 ##338 #160#64#177#1400#455
+
+analysis_rmse_9 = np.zeros((length))
+analysis_rmse_speedy_9 = np.zeros((length))
+global_average_ensemble_spread= np.zeros((length))
+ps_rmse = np.zeros((length))
+
+analysis_error_9 = np.zeros((length,ygrid,xgrid))
+analysis_error_speedy_9 = np.zeros((length,ygrid,xgrid))
+
+print(np.shape(temp_500_analysis_speedy))
+print(np.shape(temp_500_nature))
+print(np.shape(temp_500_analysis))
+#length = 481
+for i in range(length):
+    analysis_rmse_9[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis[i,:,:],lats)
+    analysis_rmse_speedy_9[i] = latituded_weighted_rmse(temp_500_nature[i*6,:,:],temp_500_analysis_speedy[i,:,:],lats)
+    ps_rmse[i] = rms(ps_nature[i*6,:,:],ps_analysis[i,:,:])
+    analysis_error_9[i,:,:] = temp_500_analysis[i,:,:] - temp_500_nature[i*6,:,:]
+    analysis_error_speedy_9[i,:,:] = temp_500_analysis_speedy[i,:,:] - temp_500_nature[i*6,:,:]
+    #global_average_ensemble_spread[i] = np.average(temp_500_spread[i,:,:])
+
+''' 24(below) instead of 28 to cut transient event (ML spin up) out in first few weeks '''
+
+averaged_error_9 = np.average(abs(analysis_error_9[24::,:,:]),axis=0)
+averaged_error_speedy_9 = np.average(abs(analysis_error_speedy_9[24::,:,:]),axis=0)
+
+
+'''plot'''
+base = datetime(2011,1,1,0)
+# plot
+length = 481 
+date_list = [base + timedelta(days=x/4) for x in range(length)]
+plt.figure(figsize=(16,6))
+
+'''1'''
+
+#plt.plot(date_list,analysis_rmse,color='orange',linewidth=.75,label='RMSE Hybrid 1.5,1.5') 
+#plt.axhline(y=np.average(analysis_rmse[20::]), color='orange', linestyle='-.',label="Average RMSE Hybrid 1.5,1.5")
+#plt.plot(date_list,analysis_rmse_speedy,color='k',linewidth=.75,label='RMSE SPEEDY 1.5')
+#plt.axhline(y=np.average(analysis_rmse_speedy[20::]), color='k', linestyle='--',label="Average RMSE SPEEDY 50 member")
+
+
+'''4'''
+length = 1457 
+date_list = [base + timedelta(days=x/4) for x in range(length)]
+blue_green = (0, 128/255, 128/255)  # (R, G, B)
+plt.plot(date_list,analysis_rmse_4, color='r',linewidth=.75,label='RMSE Hybrid 1.5,1.3')
+plt.axhline(y=np.average(analysis_rmse_4[20::]), color='r', linestyle='--',label="Average RMSE Hybrid 1.5,1.3")
+plt.plot(date_list,analysis_rmse_speedy_4,color='b',linewidth=.75,label='RMSE SPEEDY 1.3')
+plt.axhline(y=np.average(analysis_rmse_speedy_4[20::]), color='b', linestyle='--',label="Average RMSE SPEEDY 1.3")
+
+
+'''2'''
+length = 481 
+date_list = [base + timedelta(days=x/4) for x in range(length)]
+
+
+#plt.plot(date_list,analysis_rmse_2,color='r',linewidth=.75,label='RMSE Hybrid 1.3,1.3') #cov-infl1.3
+#plt.axhline(y=np.average(analysis_rmse_2[20::]), color='r', linestyle='--',label="Average RMSE Hybrid 1.3,1.3")
+#plt.plot(date_list,analysis_rmse_speedy_2,color='b',linewidth=.75,label='RMSE SPEEDY 1.3')
+#plt.axhline(y=np.average(analysis_rmse_speedy_2[20::]), color='b', linestyle='--',label="Average RMSE SPEEDY 1.3")
+
+''' 
+percent change '''
+average_hybrid = np.average(analysis_rmse_4[20::]) 
+average_speedy = np.average(analysis_rmse_speedy_4[20::])
+percent_change = ((average_hybrid - average_speedy) / average_speedy ) * 100
+print('average percent change = ',percent_change)
+'''3'''
+#length = 481 
+#date_list = [base + timedelta(days=x/4) for x in range(length)]
+#
+#plt.plot(date_list,analysis_rmse_3,color='m',linewidth=.75,label='RMSE Hybrid 1.3,1.5') #cov-infl1.3
+#plt.axhline(y=np.average(analysis_rmse_3[20::]), color='m', linestyle='--',label="Average RMSE Hybrid 1.3,1.5")
+#plt.plot(date_list,analysis_rmse_speedy_3,color='k',linewidth=.75,label='RMSE SPEEDY 1.5')
+#plt.axhline(y=np.average(analysis_rmse_speedy_3[20::]), color='k', linestyle='--',label="Average RMSE SPEEDY 1.5")
+
+'''5'''
+#length = 237 
+#date_list = [base + timedelta(days=x/4) for x in range(length)]
+#
+#maroon = (128/255, 0, 0)  # (R, G, B)
+#plt.plot(date_list,analysis_rmse_5,color='c',linewidth=.75,label='RMSE New Hybrid 1.7') 
+#plt.axhline(y=np.average(analysis_rmse_5[20::]), color='c', linestyle='--',label="Average RMSE New Hybrid 1.7")
+#plt.plot(date_list,analysis_rmse_speedy_5,color=maroon,linewidth=.75,label='RMSE SPEEDY 1.7')
+#plt.axhline(y=np.average(analysis_rmse_speedy_5[20::]), color=maroon, linestyle='--',label="Average RMSE SPEEDY 1.7")
+
+#plt.plot(date_list,analysis_rmse,color='g',linewidth=.75,label='RMSE Hybrid 20 member') #cov-infl1.3
+#plt.plot(date_list,analysis_rmse_speedy,color='k',linewidth=.75,label='RMSE SPEEDY 20 member')
+#plt.axhline(y=np.average(analysis_rmse[20::]), color='g', linestyle='--',label="Average RMSE Hybrid 20 member")
+#plt.axhline(y=np.average(analysis_rmse_speedy[20::]), color='k', linestyle='--',label="Average RMSE SPEEDY 20 member")
+#
+#plt.plot(date_list,analysis_rmse_2,color='r',linewidth=.75,label='RMSE Hybrid 40 member') #cov-infl1.3
+#plt.plot(date_list,analysis_rmse_speedy_2,color='b',linewidth=.75,label='RMSE SPEEDY 40 member')
+#plt.axhline(y=np.average(analysis_rmse_2[20::]), color='r', linestyle='--',label="Average RMSE Hybrid 40 member")
+#plt.axhline(y=np.average(analysis_rmse_speedy_2[20::]), color='b', linestyle='--',label="Average RMSE SPEEDY 40 member")
+#plt.plot(date_list,analysis_rmse_3,color='m',linewidth=.75,label='RMSE Hybrid 30 member') #cov-infl1.3
+#plt.axhline(y=np.average(analysis_rmse_3[20::]), color='m', linestyle='--',label="Average RMSE Hybrid 30 member")
+#plt.plot(date_list,analysis_rmse_speedy_3,color='y',linewidth=.75,label='RMSE SPEEDY 30 member')
+#plt.axhline(y=np.average(analysis_rmse_speedy_3[20::]), color='y', linestyle='--',label="Average RMSE SPEEDY 30 member")
+
+# averages 
+print(str(var_era),' and ',str(level))
+print('avg rmse hybrid 1.5,1.5',np.average(analysis_rmse[20::]))
+print('average rmse Hybrid 1.5,1.3 12months', np.average(analysis_rmse_4[20::]))
+print('average rmse SPEEDY 1.3 12months', np.average(analysis_rmse_speedy_4[20::]))
+
+print('average rmse Hybrid 1.3,1.3', np.average(analysis_rmse_2[20::]))
+print('average rmse SPEEDY 1.3', np.average(analysis_rmse_speedy_2[20::]))
+print('average rmse Hybrid 1.3,1.5', np.average(analysis_rmse_3[20::]))
+print('average rmse SPEEDY 1.5', np.average(analysis_rmse_speedy_3[20::]))
+print('average rmse Hybrid 1.5,1.7', np.average(analysis_rmse_5[20::]))
+print('average rmse SPEEDY 1.9', np.average(analysis_rmse_speedy_5[20::]))
+print('average rmse Hybrid 1.5,1.9', np.average(analysis_rmse_6[20::]))
+print('average rmse Hybrid 1.5,1.1', np.average(analysis_rmse_7[20::]))
+print('average rmse Hybrid 1.3,1.7', np.average(analysis_rmse_8[20::]))
+print('average rmse Hybrid 1.3,1.9', np.average(analysis_rmse_9[20::]))
+
+
+
+plt.title('LETKF Analysis Error\n200 hPa Temperature')
+#plt.title('LETKF Analysis Error\n200 hPa Meridional Wind')
+plt.legend(loc='center left',fontsize=10, bbox_to_anchor=(1, 0.5))
+plt.xlabel('Date')
+plt.ylabel('Analysis Error')
+# plt.xticks(date_list[::305])
+plt.xlim([datetime(2011, 1, 1,0), datetime(2012, 1, 1,0)])
+plt.ylim(1.4,3.0,.2) # 3,6,.5 for v_wind
+plt.tight_layout()
+plt.show()
+

@@ -1,0 +1,89 @@
+4a5,6
+> # RUN "FORECASTS", make ensemble forecast from the previous background grd file
+> # not the analysis. dylan 7/17/24
+26,29c28
+< #cp $SPEEDY/letkf/run/ensfcst_hybrid.sh .
+< cp $SPEEDY/letkf/run/ensfcst_hybrid_faster.sh .
+< cp $SPEEDY/letkf/run/ensfcst_hybrid_preprocess.sh .
+< cp $SPEEDY/letkf/run/ensfcst_hybrid_postprocess.sh .
+---
+> cp $SPEEDY/letkf/run/ensfcst.sh .
+66d64
+<     cp $SPEEDY/model_hybrid/source/*mkl* .
+81,82c79,80
+< #sed -i "s/NSTEPS/36/g" mod_tsteps.f90
+< sed -i "s/NSTEPS/96/g" mod_tsteps.f90
+---
+> sed -i "s/NSTEPS/36/g" mod_tsteps.f90
+> #####sed -i "s/NSTEPS/96/g" mod_tsteps.f90
+91c89
+< make -s imp.exe COMPILER=gcc2021
+---
+> make -s imp.exe
+119a118
+>     echo "For each member apply obs opertor"
+129a129,130
+>     echo "dylan - past observe each ens mem"
+> 
+146a148,149
+>     
+>     echo "dylan - running mpiexec $n_procs"
+151a155,156
+>     echo "dylan - past run mpiexec"  
+> 
+163d167
+<     # dylan trick to remove the analysis from being cycled back,
+166a171,174
+>     # dylan trick here. replace this newly created anal, with corresponding gues
+>     # 
+>     #
+>     #
+169c177
+<     #  
+---
+>     #
+174c182
+< 
+---
+>     
+176c184
+<   
+---
+> 
+185,210d192
+<         echo "$N" 
+<         echo "Member $MEM in process $N"
+<         sh ensfcst_hybrid_preprocess.sh $SPEEDY $OUTPUT $YYYY$MM$DD$HH $TY$TM$TD$TH $MEM $MEM &
+< 
+<         ### wait for the end of parallel processing
+<         if test $N -eq $n_procs
+<         then
+<             time wait
+<         fi
+<     done
+<     
+< 
+< 
+<     # DYLAN add cp gues2 overwrite gues1
+<     #cp $OUTPUT/gues/002/$YYYY$MM$DD$HH.grd $OUTPUT/gues/001/$YYYY$MM$DD$HH.grd
+< 
+< 
+< 
+< 
+< 
+<     time sh ensfcst_hybrid_faster.sh $SPEEDY $OUTPUT $YYYY$MM$DD$HH $TY$TM$TD$TH $MEM $N
+< 
+<     for MEM in $(seq -f "%03g" 1 $n_ens)
+<     do
+<         # Get node number
+<         N=`printf "%02d" $(((10#$MEM-1) % n_procs + 1))`
+213c195
+<         sh ensfcst_hybrid_postprocess.sh $SPEEDY $OUTPUT $YYYY$MM$DD$HH $TY$TM$TD$TH $MEM $MEM &
+---
+>         sh ensfcst.sh $SPEEDY $OUTPUT $YYYY$MM$DD$HH $TY$TM$TD$TH $MEM $N &
+221c203
+< 
+---
+>     
+223d204
+< 

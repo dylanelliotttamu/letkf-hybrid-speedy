@@ -1,0 +1,40 @@
+# Default compiler
+FC = mpif90
+
+# Location of SPEEDY common files
+common = ../common
+
+# Compilation arguments
+COMPARGS = -fconvert=swap -O3 -fallow-argument-mismatch -L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl  -m64  -I"${MKLROOT}/include"
+
+# BLAS routines
+BLAS = $(common)/netlibrs.f $(common)/netlibblas.f
+
+# Define all files that LETKF depends on
+letkf_depend = letkf_obs.o letkf_tools.o
+common_depend = $(common)/common_speedy.o $(common)/common_obs_speedy.o $(common)/common_mpi_speedy.o\
+	$(common)/common.o $(common)/common_mpi.o $(common)/common_mtx.o $(common)/common_letkf.o\
+	$(common)/SFMT.o
+
+# Main compilation rule
+letkf: letkf.o $(letkf_depend) $(common_depend)
+	$(FC) $(COMPARGS) -o $@ $^ $(common)/netlib.f    #-lblas
+
+letkf.o: $(letkf_depend) $(common_depend)
+letkf_obs.o: $(common)/common.o $(common)/common_mpi.o $(common)/common_speedy.o $(common)/common_obs_speedy.o\
+	$(common)/common_mpi_speedy.o $(common)/common_letkf.o
+$(common)/common_letkf.o: $(common)/common_mtx.o
+$(common)/common.o: $(common)/SFMT.o
+$(common)/common_speedy.o: $(common)/common.o
+$(common)/common_mpi_speedy.o: $(common)/common_mpi.o
+
+# Build rules
+$(common)/%.o: $(common)/%.f90
+	$(FC) $(COMPARGS) -c $< -o $@
+
+%.o: %.f90
+	$(FC) $(COMPARGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f *.o *.mod $(common)/*.o $(common)/*.mod

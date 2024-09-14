@@ -1,0 +1,2723 @@
+nohup: ignoring input
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         448           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         448           1           2           2           8
+ region,level,res_zstart,res_zend         448           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         448           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         416           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         416           1           2           2           8
+ region,level,res_zstart,res_zend         416           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         416           1          16          19           4
+ region,level,tdata_yend           3
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         704           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         704           1           2           2           8
+ region,level,res_zstart,res_zend         704           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         704           1          16          19           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         736           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         736           1           2           2           8
+ region,level,res_zstart,res_zend         736           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         736           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         800           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         800           1           2           2           8
+ region,level,res_zstart,res_zend         800           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         800           1          16          19           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         608           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         608           1           2           2           8
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         672           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         672           1           2           2           8
+ region,level,res_zstart,res_zend         672           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         672           1           1           3           3
+ region,level,tdata_yend           2
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t          32           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk          32           1           2           2           8
+ region,level,res_zstart,res_zend         608           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         608           1          16          19           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         960           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         960           1           2           2           8
+ region,level,res_zstart,res_zend         960           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         960           1           1           3           3
+ region,level,tdata_yend           2
+ reading era states
+ region,level,res_zstart,res_zend          32           1           1           8
+ region,level,input_ystart,input_yend,inputychunk          32           1          16          19           4
+ region,level,tdata_yend           3
+ herhe
+ start_year,end_year        1990        2009
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         160           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         160           1           2           2           8
+ region,level,res_zstart,res_zend         160           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         160           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         768           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         768           1           2           2           8
+ region,level,res_zstart,res_zend         768           1           1           8
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         832           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         832           1           2           2           8
+ herhe
+ start_year,end_year        1990        2009
+ region,level,res_zstart,res_zend         832           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         832           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_ystart,input_yend,inputychunk         768           1           1           3           3
+ region,level,tdata_yend           2
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t        1024           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk        1024           1           2           2           8
+ region,level,res_zstart,res_zend        1024           1           1           8
+ region,level,input_ystart,input_yend,inputychunk        1024           1          32          35           4
+ region,level,tdata_yend           3
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         192           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         192           1           2           2           8
+ region,level,res_zstart,res_zend         192           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         192           1           1           3           3
+ region,level,tdata_yend           2
+ reading era states
+ herhe
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         256           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         256           1           2           2           8
+ region,level,res_zstart,res_zend         256           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         256           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t        1088           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk        1088           1           2           2           8
+ region,level,res_zstart,res_zend        1088           1           1           8
+ region,level,input_ystart,input_yend,inputychunk        1088           1          16          19           4
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,tdata_yend           3
+ reading era states
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         896           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         896           1           2           2           8
+ region,level,res_zstart,res_zend         896           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         896           1          16          19           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         864           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         864           1           2           2           8
+ region,level,res_zstart,res_zend         864           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         864           1           1           3           3
+ region,level,tdata_yend           2
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         224           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         224           1           2           2           8
+ region,level,res_zstart,res_zend         224           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         224           1          16          19           4
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t        1120           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk        1120           1           2           2           8
+ region,level,res_zstart,res_zend        1120           1           1           8
+ region,level,input_ystart,input_yend,inputychunk        1120           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ region,level,tdata_yend           3
+ herhe
+ start_year,end_year        1990        2009
+ reading era states
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         320           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         320           1           2           2           8
+ region,level,res_zstart,res_zend         320           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         320           1          16          19           4
+ region,level,tdata_yend           3
+ herhe
+ start_year,end_year        1990        2009
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t          64           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk          64           1           2           2           8
+ region,level,res_zstart,res_zend          64           1           1           8
+ region,level,input_ystart,input_yend,inputychunk          64           1          32          35           4
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         576           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         576           1           2           2           8
+ region,level,res_zstart,res_zend         576           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         576           1           1           3           3
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         640           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         640           1           2           2           8
+ region,level,res_zstart,res_zend         640           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         640           1          32          35           4
+ region,level,tdata_yend           3
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         928           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         928           1           2           2           8
+ region,level,res_zstart,res_zend         928           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         928           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,tdata_yend           2
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         128           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         128           1           2           2           8
+ region,level,res_zstart,res_zend         128           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         128           1          16          19           4
+ region,level,tdata_yend           3
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         480           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         480           1           2           2           8
+ region,level,res_zstart,res_zend         480           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         480           1           1           3           3
+ region,level,tdata_yend           2
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         512           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         512           1           2           2           8
+ region,level,res_zstart,res_zend         512           1           1           8
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         544           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         544           1           2           2           8
+ region,level,res_zstart,res_zend         544           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         544           1          32          35           4
+ region,level,tdata_yend           3
+ reading era states
+ start_year,end_year        1990        2009
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         384           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         384           1           2           2           8
+ region,level,res_zstart,res_zend         384           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         384           1           1           3           3
+ region,level,tdata_yend           2
+ reading era states
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_ystart,input_yend,inputychunk         512           1          16          19           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t           0           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk           0           1           2           2           8
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t        1056           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk        1056           1           2           2           8
+ region,level,res_zstart,res_zend        1056           1           1           8
+ region,level,input_ystart,input_yend,inputychunk        1056           1           1           3           3
+ region,level,tdata_yend           2
+ region,level,res_zstart,res_zend           0           1           1           8
+ region,level,input_ystart,input_yend,inputychunk           0           1           1           3           3
+ region,level,tdata_yend           2
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t          96           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk          96           1           2           2           8
+ region,level,res_zstart,res_zend          96           1           1           8
+ region,level,input_ystart,input_yend,inputychunk          96           1           1           3           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,tdata_yend           2
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         288           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         288           1           2           2           8
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         352           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         352           1           2           2           8
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         992           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         992           1           2           2           8
+ region,level,res_zstart,res_zend         288           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         288           1           1           3           3
+ region,level,res_zstart,res_zend         992           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         992           1          16          19           4
+ region,level,tdata_yend           3
+ region,level,res_zstart,res_zend         352           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         352           1          32          35           4
+ region,level,tdata_yend           3
+ region,level,tdata_yend           2
+ reading era states
+ reading era states
+ herhe
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ herhe
+ start_year,end_year        1990        2009
+ start_year,end_year        1990        2009
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ no tisr_input
+ reservoir%reservoir_numinputs         396           0           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ standardized era_data%eravariables(4,1,1,:,100)   0.0000000000000000       -2.0720435890222251E-005   2.2688631404125910       0.53230988257721057      -0.28105761899487469      -0.31542858810481195       0.51813945635480585        3.8203900060624103     
+ reservoir%trainingdata(:,1000) -0.70078864622523418      -0.35883731099708360        1.4808516433040886        0.0000000000000000      -0.69117431148246167      -0.49784277567795099        1.4078593892088329        0.0000000000000000      -0.68188211326198855      -0.62993293172930964        1.3220938477249926        0.0000000000000000      -0.67297621696866305      -0.75392139772223099        1.2247031622337601        0.0000000000000000      -0.71038530274422196       0.19459041141393998        1.3032933020009558        0.0000000000000000      -0.67892919514091088        7.8818633999940213E-002   1.2162906222901078        0.0000000000000000      -0.65079331986398226       -3.2010004699280281E-002   1.1014906771644122        0.0000000000000000      -0.62618785135176547      -0.13224146720836377       0.96374148831718354        0.0000000000000000      -0.65651844537411586       0.96411648070296929       0.97821062193435293        0.0000000000000000      -0.61023227226251020       0.84164508853147912       0.85872284583781022        0.0000000000000000      -0.57140761908611537       0.72859044426164377       0.70931994673638488        0.0000000000000000      -0.53860469273002010       0.63701452229756628       0.54338059671056282        0.0000000000000000       -1.2901032157194365       0.40904448200091686        1.8264320617278886       -1.4757788625398933E-005  -1.2888799857544140       0.22423316720582814        1.8172210893078393       -1.4665929660519867E-005  -1.2875080759041400        4.1151435802133506E-002   1.7937442306454912       -1.4581005592741820E-005  -1.2860043816101203      -0.13878415393663637        1.7559667713321752       -1.4504835411468337E-005  -1.2586008202597272        1.4219222387563635        1.9881553335114066       -1.6722069807553015E-005  -1.2536783333770014        1.2094648305326117        2.0248616053572390       -1.6141357440471000E-005  -1.2465298720758815        1.0002341339779028        2.0351799674138116       -1.5604869253262694E-005  -1.2389953499363533       0.79809695050357599        2.0164949369480190       -1.5123405495511650E-005  -1.1782342736489098        1.9054597482912410        2.1961395222066238       -1.9332546975316762E-005  -1.1740323773464081        1.6763943721271553        2.2162902445984107       -1.8584601269946250E-005  -1.1702832788762627        1.4896877937934960        2.1836192748002237       -1.7521629337249140E-005  -1.1645912046329459        1.3228463489242595        2.1087650913085709       -1.6577460149971119E-005 -0.84131668661237446       0.29367893696650749        3.2663707272383080      -0.86028996227902543      -0.83395255971493842       -3.6608561976084454E-002   3.2655337755545508      -0.85749891861535177      -0.82629218105272517      -0.36350037101652244        3.2404069350137776      -0.85423770682151734      -0.81819931806236990      -0.68423004497237527        3.1915054966730341      -0.85054664753450782      -0.84970255773504588       0.84295819347973466        3.4751235966336371      -0.88234114162919197      -0.84785152481059856       0.43390932766170309        3.4481448297856225      -0.87774640835861284      -0.84506200089408334        6.3095655073057977E-002   3.3782552184521957      -0.87097918933293084      -0.83974136244711772      -0.26837429204876212        3.2705591436627057      -0.86294097532073744      -0.90386689499153661        1.1919457109862281        3.3767627521629784      -0.88215155596094452      -0.90978868665461954       0.83428275650521999        3.2599260529531526      -0.87788147265821392      -0.90286136892860680       0.55601650745274311        3.1257050478784310      -0.87216035780767898      -0.88521925197287854       0.32891400813311200        2.9578969668862145      -0.86476936869352317       -1.8213387331341504       0.81051137803702145        2.9659289144968137      -0.86312429581345618       -1.8779267471392083       0.57208695690179967        2.9372271058031756      -0.88016548695107499       -1.9345604511085333       0.34191577108999061        2.8882861667413651      -0.89262393895963998       -1.9906697137488780       0.12204276802660100        2.8204656903201126      -0.90328886589141533       -1.5207007547759588       0.88376518971346041        3.0547010564904253      -0.39679390785034102       -1.6277543275742654       0.70735426744075280        3.0200610869908582      -0.41559637629175444       -1.7367149597506828       0.55435263805203105        2.9495258338046448      -0.41986967402462155       -1.8450796358714405       0.42834654070227318        2.8430426063643970      -0.41312213420151628       -1.5046874155603871        1.0041728244406591        3.2000771979302289      -0.85311979329265142       -1.7012774261609815       0.85456968799903965        3.0089711555625804      -0.89245386366428237       -1.8764487761211726       0.79143404398139594        2.7853173340071620      -0.90373636351757447       -2.0170725535347809       0.77532019417610198        2.5528267090515557      -0.89442630046681193       -2.8473856705942389       0.23592988896232628       0.98088498424559412      -0.94947675898036310       -2.9581257296163210       0.12290654132091360       0.92718119288733802      -0.95924845937717973       -3.0687105412976265        1.9107220937841056E-002  0.86479051017252773      -0.96730908992111964       -3.1783730011307862       -7.4179656849268583E-002  0.79474481579784217      -0.97538163457070770       -2.2359668494353455        1.0077330191417309       0.97602836625753864      -0.76645803967204340       -2.4754982759267175       0.88508978046575004       0.86751600570097331      -0.77149677589968479       -2.7130510598395592       0.76686269967843979       0.75297794820760422      -0.76485266465659096       -2.9435903168278870       0.66034969734375615       0.63121832270006040      -0.74542753742143653       -2.0283737582269579        1.9894800692403536        1.3315706299357883      -0.95999687928801014       -2.4417517657335068        1.8015813825557638        1.1572187625469461      -0.99673092134983710       -2.8175020795274204        1.6540346311185161       0.97564208853497447       -1.0162584973008535       -3.1382643940312245        1.5500435723969355       0.78867236512449634       -1.0138601381626040       -2.5115835946100424       0.97277767560592232        1.7868290481107252       -1.1011041808603041       -2.6257105129714189       0.81684160181156251        1.8150369747985218       -1.1054015280535365       -2.7370011016803479       0.66252593779514457        1.8271177105699536       -1.1094165481864815       -2.8473074313212239       0.50948375531355450        1.8310840721207042       -1.1113645192017350       -1.9047781751923800        1.2608731718401809        1.5353257989183327      -0.95346789326690951       -2.1699708388550700        1.1318462650208614        1.5480733570773006      -0.98885325211176067       -2.4180235319298524       0.99665805825103870        1.5192768289041998       -1.0082374540486208       -2.6467958375138054       0.86254772543937974        1.4489709312267240       -1.0151136170735047       -1.7276891746438816        1.8139944946241802        1.9096446518619070      -0.68832946093991410       -2.1356742623147249        1.6242519274729499        1.7619075517424907      -0.77187158112930843       -2.4962984671672839        1.4448782554570134        1.5624830013687798      -0.81323397117548868       -2.8075849533831860        1.2810500510337888        1.3280091484531193      -0.83128646248583327       -2.2469438446160619      -0.37974899840659515       0.89402462868723986       -1.2884673325403715       -2.3473107597048988      -0.51492554906476751       0.90618976729831091       -1.2889042626631688       -2.4472793720256454      -0.64796274292654599       0.89927709637266540       -1.2893115772582149       -2.5463195082991552      -0.77546856867318170       0.87349615203680209       -1.2896912587449194       -2.0422296779924087       0.50839948054335504        1.3822343709345617       -1.0052119295062598       -2.2444275399663045       0.24745485155853664        1.3724415888939647       -1.0354660215518108       -2.4356909144621626       -5.5415696418860336E-003   1.3327476310397344       -1.0514502977501670       -2.6151855186549291      -0.23723801988589696        1.2591664262837761       -1.0551790590490446       -1.9242674689997050       0.65283140708978904        1.9834242576847070      -0.63287688478161686       -2.2812086476114786       0.35552321827259914        1.7903084196329160      -0.70324565829774233       -2.5969147247862612       0.11104542438742648        1.5667370782817147      -0.74666533822568115       -2.8617349321026286       -7.0087738420676185E-002   1.3107654554023622      -0.77781771457526727       -2.5780814773552074       0.77137421961437769      -0.59923949614137706      -0.83920832404090639       -2.6460082407848158       0.96748583950787992      -0.50743282820315883      -0.83964901299118500       -2.7170191840586373        1.1507248260062257      -0.40032003108999664      -0.83964901299118500       -2.7907573716021852        1.3185318663872114      -0.28044448832001606      -0.83964901299118500       -1.6788389369147174       0.74859718418741217       0.32724219504527924      -0.74618081320032370       -1.8348432936916323       0.95132819152108161       0.44075764760011382      -0.72580033952972300       -2.0024982841004277        1.1263874115516572       0.57306957790506097      -0.69777505667367323       -2.1777258657691299        1.2716769828683456       0.71906645100460165      -0.66276813190446504       -1.2060211290304110        1.4156895883328371        1.9289137909091687      -0.49009588855806052       -1.5131951822879071        1.3733307581115579        1.9522859563554273      -0.48735490047726465       -1.8075088681700544        1.3725863194606831        1.9334390899791394      -0.45703234766860240       -2.0822488056022364        1.4092708470459452        1.8838419063496783      -0.40776919041997445      -0.81411213311455721       -1.0500808490189903       -1.2910241142862042       -1.5352813230597191        1.2436820247357374       0.67290580911080788       0.12081946342095777      -0.40612465451724800        7.2755370015153115E-002 -0.89088759475887469       -1.7497714352895457       -2.4910786668245239     
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         396         384           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reservoir%reservoir_numinputs         396         768           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reservoir%reservoir_numinputs         396         576           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reservoir%reservoir_numinputs         528         640           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         396         864           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         396         960           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reservoir%reservoir_numinputs         396         480           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reservoir%reservoir_numinputs         396         288           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         528          64           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reservoir%reservoir_numinputs         396         672           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reservoir%reservoir_numinputs         396        1056           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ reservoir%reservoir_numinputs         396          96           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reservoir%reservoir_numinputs         528         448           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reservoir%reservoir_numinputs         396         192           1
+ grid%atmo3d_start,grid%atmo3d_end           1         384
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reservoir%reservoir_numinputs         528         704           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reservoir%reservoir_numinputs         528        1024           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528        1088           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         528         896           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         384       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reservoir%reservoir_numinputs         528         512           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         528         832           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         320           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         528         256           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         128           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ reading model states
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reservoir%reservoir_numinputs         528         416           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reservoir%reservoir_numinputs         528         352           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         528         608           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         544           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         928           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reservoir%reservoir_numinputs         528         800           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         160           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528        1120           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         736           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         992           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528         224           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ reservoir%reservoir_numinputs         528          32           1
+ grid%atmo3d_start,grid%atmo3d_end           1         512
+ shape(reservoir%trainingdata(grid%atmo3d_start:grid%atmo3d_end,:))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ shape(reshape(era_data%eravariables,(/grid%atmo3d_end,size(era_data%eravariables,5)/)))         512       31019
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ reading model states
+ herhe
+ restart_file_name/skydata2/troyarcomano/SPEEDY_STATES/restart_1990_2011_letkf_analysis.nc
+ unstandardized speedy_data%speedy_logp(1,1,1000) -0.38043576478958130     
+ reservoir%mperfect_model_states(:,1000) -0.64058774674796515      -0.53083810219540195        1.2582254331188287        5.0022208597511053E-011 -0.63379210657531215      -0.63685459732279615        1.1631658632370478        5.0022208597511053E-011 -0.61781164702295255        8.0123296643866165E-002   1.0738008647856230        5.0022208597511053E-011 -0.59936474787810967       -5.2529180414367677E-003  0.92072116010988003        5.0022208597511053E-011  -1.2351609294866035       0.19725733798134162        1.7065537861133808       -1.3242277800044259E-004  -1.2388584968601559        1.6570320323800340E-002   1.6795283710049314       -1.3369985408088407E-004  -1.1526131813773823       0.86271989121449888        1.9546658475488299       -9.6270349053053468E-005  -1.1604197201251547       0.65689108584363853        1.9138404631544241       -9.6503587150333732E-005 -0.74859853392367459       -2.2147368764089296E-002   3.3632691010657583      -0.86810121587072941      -0.73735502260280572      -0.36839627241508882        3.3348649313647245      -0.86302379831487364      -0.71251528521597596       0.27704871523773450        3.7137245724781138      -0.87757975817012468      -0.69382871860778506       -9.5171918150276577E-002   3.6437708241129774      -0.86956744511236372       -1.8103731417100151       0.42723206001782371        3.1307732285049630       -1.0967139181729348       -1.8573702362593256       0.17888641479649828        3.1020204929449369       -1.0967139181729348       -1.5788660658083289       0.39713375030486514        3.1743037942852323      -0.49708818210463962       -1.6766346432594601       0.22132778803531189        3.0618940905581833      -0.47005589137748710       -2.6200639908451513       0.44419467652018302        1.3171393884348712       -1.0020143030961228       -2.7407429237424670       0.27981682317889539        1.2648147734208066       -1.0243322708872911       -2.1064814350308176       0.81761540171603142        1.3691422623702634      -0.86233288812285291       -2.3819998039273975       0.61504445771402361        1.2513093030104618      -0.87227467045812246       -2.1830351451330090        1.1391863758262313        1.7120894802142836       -1.1329949043547505       -2.2943617771317544       0.99893159410638788        1.7577585306999717       -1.1329949043547505       -1.7258565119847735       0.79413300169712964        1.9764697914166696      -0.96470753816055632       -1.9707373955557439       0.65784312628124586        1.9257500907410030       -1.0237925899418117       -2.0239777227681772      -0.44779199072996445        1.2174655367999390       -1.3071582082029409       -2.1110310987101140      -0.54756503023509728        1.2032738436020769       -1.3071582082029409       -1.8830835010261848      -0.68215020187095443        1.5318324694796237       -1.1311811853280513       -2.0704768797077633      -0.79247193839865915        1.5086691265696861       -1.1294761208361856       -2.9003579663571299       0.25648278154476578       -6.9247402545503767E-002 -0.84635049477150803       -2.9677803178371653       0.35154578745871345       -4.1246899035792615E-002 -0.84635049477150803       -2.1250105423611858       0.23797155766416064       0.66362783889454624      -0.84635049477150803       -2.2694305230080709       0.28984176269920403       0.73911452438766445      -0.84635049477150803       -1.2170799348542167       -1.4545493098733062       0.47457932446195905       -7.2816907687982005E-002
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+ region num           0
+ radius  0.69999999999999996     
+ degree   6.0000000000000000     
+ max res  0.23623522167547767     
+ min res   8.4571728011389471E-007
+ average  0.11790697260524097     
+ k       35283
+ eig   2.9631150242052224     
+ q          15 n        5940 num inputs         396
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+ loop number           1
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+  
+  Maximum number of iterations reached.
+  
+ loop number           1
+  
+  Maximum number of iterations reached.
+  
+ loop number           1
+  
+  Maximum number of iterations reached.
+  
+ loop number           1
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ loop number           1
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+  
+  Maximum number of iterations reached.
+  
+  
+  Maximum number of iterations reached.
+  
+ loop number           1
+ loop number           1
+  
+  Maximum number of iterations reached.
+  
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ starting reservoir_layer
+ num_of_batches,approx_batch_size,reservoir%traininglength,reservoir%batch_size          20        1385      166200        1385
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ loop number           1
+ chunking        1384 region         288
+ grid%predict_end         396          41        1425
+ chunking        1384 region         864
+ grid%predict_end         396          41        1425
+ chunking        1384 region         672
+ grid%predict_end         396          41        1425
+ chunking        1384 region        1056
+ chunking        1384 region          96
+ chunking        1384 region         480
+ grid%predict_end         396          41        1425
+ grid%predict_end         396          41        1425
+ grid%predict_end         396          41        1425
+ chunking        1384 region          32
+ grid%predict_end         528          41        1425
+ new state        1385 region         288
+ new state        1385 region         864
+ chunking        1384 region         192
+ chunking        1384 region         736
+ grid%predict_end         396          41        1425
+ new state        1385 region         672
+ grid%predict_end         528          41        1425
+ new state        1385 region          96
+ new state        1385 region        1056
+ new state        1385 region         480
+ chunking        1384 region         992
+ grid%predict_end         528          41        1425
+ chunking        1384 region        1120
+ grid%predict_end         528          41        1425
+ chunking        1384 region         576
+ chunking        1384 region         608
+ grid%predict_end         528          41        1425
+ grid%predict_end         396          41        1425
+ chunking        1384 region         160
+ chunking        1384 region         224
+ chunking        1384 region         352
+ grid%predict_end         528          41        1425
+ chunking        1384 region         544
+ grid%predict_end         528          41        1425
+ grid%predict_end         528          41        1425
+ grid%predict_end         528          41        1425
+ chunking        1384 region         768
+ chunking        1384 region         800
+ chunking        1384 region         960
+ grid%predict_end         528          41        1425
+ grid%predict_end         396          41        1425
+ chunking        1384 region         416
+ grid%predict_end         396          41        1425
+ grid%predict_end         528          41        1425
+ chunking        1384 region           0
+ grid%predict_end         396          41        1425
+ chunking        1384 region         928
+ grid%predict_end         528          41        1425
+ chunking        1384 region         384
+ grid%predict_end         396          41        1425
+ new state        1385 region          32
+ new state        1385 region         736
+ new state        1385 region         992
+ new state        1385 region         192
+ new state        1385 region        1120
+ new state        1385 region         608
+ new state        1385 region         160
+ new state        1385 region         224
+ new state        1385 region         352
+ new state        1385 region         544
+ new state        1385 region         576
+ new state        1385 region         800
+ new state        1385 region         768
+ new state        1385 region         960
+ new state        1385 region         416
+ new state        1385 region           0
+ new state        1385 region         384
+ new state        1385 region         928
+ chunking        1384 region         448
+ grid%predict_end         528          41        1425
+ chunking        1384 region          64
+ chunking        1384 region        1024
+ grid%predict_end         528          41        1425
+ grid%predict_end         528          41        1425
+ chunking        1384 region        1088
+ chunking        1384 region         256
+ grid%predict_end         528          41        1425
+ grid%predict_end         528          41        1425
+ chunking        1384 region         704
+ chunking        1384 region         896
+ grid%predict_end         528          41        1425
+ chunking        1384 region         832
+ chunking        1384 region         320
+ grid%predict_end         528          41        1425
+ grid%predict_end         528          41        1425
+ grid%predict_end         528          41        1425
+ chunking        1384 region         640
+ grid%predict_end         528          41        1425
+ chunking        1384 region         128
+ grid%predict_end         528          41        1425
+ new state        1385 region         448
+ chunking        1384 region         512
+ grid%predict_end         528          41        1425
+ new state        1385 region          64
+ new state        1385 region         256
+ new state        1385 region        1024
+ new state        1385 region        1088
+ new state        1385 region         704
+ new state        1385 region         832
+ new state        1385 region         896
+ new state        1385 region         320
+ new state        1385 region         640
+ new state        1385 region         128
+ chunking        2769 region         288
+ grid%predict_end         396        1426        2810
+ chunking        2769 region         864
+ grid%predict_end         396        1426        2810
+ chunking        2769 region         672
+ grid%predict_end         396        1426        2810
+ chunking        2769 region          96
+ grid%predict_end         396        1426        2810
+ chunking        2769 region        1056
+ grid%predict_end         396        1426        2810
+ chunking        2769 region         480
+ grid%predict_end         396        1426        2810
+ new state        1385 region         512
+ new state        2770 region         288
+ new state        2770 region         864
+ new state        2770 region         672
+ new state        2770 region          96
+ new state        2770 region        1056
+ new state        2770 region         480
+ chunking        2769 region         192
+ grid%predict_end         396        1426        2810
+ chunking        2769 region          32
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         736
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         576
+ chunking        2769 region         992
+ grid%predict_end         396        1426        2810
+ grid%predict_end         528        1426        2810
+ chunking        2769 region        1120
+ chunking        2769 region         352
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         960
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         608
+ chunking        2769 region         768
+ grid%predict_end         396        1426        2810
+ grid%predict_end         528        1426        2810
+ grid%predict_end         396        1426        2810
+ chunking        2769 region         160
+ chunking        2769 region         224
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         544
+ grid%predict_end         528        1426        2810
+ grid%predict_end         528        1426        2810
+ chunking        2769 region           0
+ grid%predict_end         396        1426        2810
+ chunking        2769 region         800
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         416
+ chunking        2769 region         384
+ grid%predict_end         528        1426        2810
+ grid%predict_end         396        1426        2810
+ new state        2770 region          32
+ new state        2770 region         192
+ chunking        2769 region         928
+ grid%predict_end         528        1426        2810
+ new state        2770 region         736
+ new state        2770 region         992
+ new state        2770 region         576
+ new state        2770 region        1120
+ new state        2770 region         352
+ new state        2770 region         608
+ new state        2770 region         160
+ new state        2770 region         960
+ new state        2770 region         224
+ new state        2770 region         544
+ new state        2770 region         768
+ new state        2770 region         800
+ new state        2770 region           0
+ new state        2770 region         416
+ new state        2770 region         384
+ new state        2770 region         928
+ chunking        4154 region         288
+ grid%predict_end         396        2811        4195
+ chunking        4154 region         864
+ grid%predict_end         396        2811        4195
+ chunking        4154 region         672
+ grid%predict_end         396        2811        4195
+ chunking        4154 region          96
+ grid%predict_end         396        2811        4195
+ chunking        4154 region        1056
+ grid%predict_end         396        2811        4195
+ chunking        4154 region         480
+ grid%predict_end         396        2811        4195
+ chunking        2769 region         448
+ grid%predict_end         528        1426        2810
+ new state        4155 region         288
+ new state        4155 region         864
+ new state        4155 region         672
+ chunking        2769 region          64
+ grid%predict_end         528        1426        2810
+ new state        4155 region          96
+ new state        4155 region        1056
+ chunking        2769 region         256
+ new state        4155 region         480
+ chunking        2769 region        1024
+ grid%predict_end         528        1426        2810
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         704
+ chunking        2769 region        1088
+ grid%predict_end         528        1426        2810
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         832
+ grid%predict_end         528        1426        2810
+ chunking        2769 region         320
+ chunking        2769 region         896
+ grid%predict_end         528        1426        2810
+ grid%predict_end         528        1426        2810
+ new state        2770 region         448
+ chunking        2769 region         640
+ grid%predict_end         528        1426        2810
+ new state        2770 region          64
+ new state        2770 region         256
+ new state        2770 region         704
+ chunking        2769 region         128
+ grid%predict_end         528        1426        2810
+ new state        2770 region        1024
+ new state        2770 region         832
+ new state        2770 region         320
+ new state        2770 region        1088
+ new state        2770 region         896
+ chunking        4154 region         192
+ grid%predict_end         396        2811        4195
+ new state        2770 region         640
+ chunking        2769 region         512
+ grid%predict_end         528        1426        2810
+ chunking        4154 region          32
+ grid%predict_end         528        2811        4195
+ chunking        4154 region         736
+ grid%predict_end         528        2811        4195
+ chunking        4154 region         576
+ grid%predict_end         396        2811        4195
+ chunking        4154 region         992
+ grid%predict_end         528        2811        4195
+ chunking        4154 region         960
+ chunking        4154 region         768
+ grid%predict_end         396        2811        4195
+ grid%predict_end         396        2811        4195
+ chunking        4154 region         352
+ new state        2770 region         128
+ grid%predict_end         528        2811        4195
+ chunking        4154 region        1120
+ grid%predict_end         528        2811        4195
+ chunking        4154 region         608
+ grid%predict_end         528        2811        4195
+ chunking        4154 region         160
+ grid%predict_end         528        2811        4195
+ chunking        4154 region           0
+ chunking        4154 region         544
+ chunking        4154 region         224
+ grid%predict_end         528        2811        4195
+ grid%predict_end         528        2811        4195
+ grid%predict_end         396        2811        4195
+ new state        4155 region         192
+ chunking        4154 region         800
+ grid%predict_end         528        2811        4195
+ chunking        4154 region         384
+ grid%predict_end         396        2811        4195
+ new state        2770 region         512
+ new state        4155 region          32
+ chunking        4154 region         416
+ new state        4155 region         736
+ grid%predict_end         528        2811        4195
+ new state        4155 region         576
+ new state        4155 region         992
+ new state        4155 region         768
+ new state        4155 region         352
+ chunking        5539 region         288
+ new state        4155 region        1120
+ grid%predict_end         396        4196        5580
+ new state        4155 region         608
+ chunking        5539 region         864
+ grid%predict_end         396        4196        5580
+ new state        4155 region         160
+ new state        4155 region         960
+ new state        4155 region         544
+ new state        4155 region         224
+ chunking        5539 region         672
+ grid%predict_end         396        4196        5580
+ chunking        4154 region         928
+ grid%predict_end         528        2811        4195
+ new state        4155 region           0
+ chunking        5539 region          96
+ grid%predict_end         396        4196        5580
+ chunking        5539 region        1056
+ grid%predict_end         396        4196        5580
+ chunking        5539 region         480
+ grid%predict_end         396        4196        5580
+ new state        4155 region         800
+ new state        4155 region         384
+ new state        4155 region         416
+ new state        5540 region         288
+ new state        5540 region         864
+ new state        4155 region         928
+ new state        5540 region         672
+ new state        5540 region          96
+ new state        5540 region        1056
+ new state        5540 region         480
+ chunking        4154 region         448
+ grid%predict_end         528        2811        4195
+ chunking        4154 region          64
+ grid%predict_end         528        2811        4195
+ chunking        5539 region         192
+ grid%predict_end         396        4196        5580
+ chunking        4154 region         256
+ grid%predict_end         528        2811        4195
+ chunking        5539 region          32
+ grid%predict_end         528        4196        5580
+ chunking        4154 region         704
+ grid%predict_end         528        2811        4195
+ chunking        5539 region         736
+ grid%predict_end         528        4196        5580
+ chunking        4154 region        1024
+ chunking        5539 region         576
+ grid%predict_end         528        2811        4195
+ grid%predict_end         396        4196        5580
+ chunking        4154 region         320
+ chunking        5539 region         992
+ chunking        6924 region         288
+ grid%predict_end         528        2811        4195
+ grid%predict_end         528        4196        5580
+ grid%predict_end         396        5581        6965
+ chunking        4154 region         832
+ grid%predict_end         528        2811        4195
+ chunking        6924 region         864
+ chunking        4154 region        1088
+ grid%predict_end         396        5581        6965
+ chunking        5539 region         352
+ chunking        5539 region         768
+ grid%predict_end         528        2811        4195
+ grid%predict_end         528        4196        5580
+ grid%predict_end         396        4196        5580
+ chunking        5539 region        1120
+ chunking        6924 region         672
+ grid%predict_end         528        4196        5580
+ new state        4155 region         448
+ grid%predict_end         396        5581        6965
+ new state        4155 region          64
+ chunking        5539 region         608
+ grid%predict_end         528        4196        5580
+ chunking        4154 region         896
+ chunking        5539 region         160
+ chunking        6924 region          96
+ grid%predict_end         528        4196        5580
+ grid%predict_end         396        5581        6965
+ new state        4155 region         256
+ grid%predict_end         528        2811        4195
+ chunking        5539 region         960
+ new state        5540 region         192
+ chunking        5539 region         544
+ chunking        5539 region           0
+ grid%predict_end         396        4196        5580
+ grid%predict_end         528        4196        5580
+ chunking        5539 region         224
+ grid%predict_end         396        4196        5580
+ chunking        4154 region         640
+ grid%predict_end         528        4196        5580
+ chunking        6924 region        1056
+ grid%predict_end         396        5581        6965
+ grid%predict_end         528        2811        4195
+ chunking        6924 region         480
+ grid%predict_end         396        5581        6965
+ new state        4155 region         704
+ new state        5540 region          32
+ new state        5540 region         736
+ new state        5540 region         576
+ chunking        5539 region         800
+ grid%predict_end         528        4196        5580
+ chunking        5539 region         384
+ new state        5540 region         992
+ new state        4155 region         320
+ grid%predict_end         396        4196        5580
+ new state        6925 region         288
+ new state        4155 region        1024
+ new state        6925 region         864
+ new state        5540 region         352
+ new state        5540 region         768
+ new state        4155 region         832
+ new state        5540 region        1120
+ new state        6925 region         672
+ new state        5540 region         608
+ new state        5540 region         160
+ new state        4155 region        1088
+ chunking        5539 region         416
+ new state        6925 region          96
+ grid%predict_end         528        4196        5580
+ new state        5540 region         544
+ new state        5540 region         224
+ new state        6925 region        1056
+ new state        4155 region         640
+ new state        5540 region           0
+ new state        5540 region         960
+ new state        6925 region         480
+ new state        4155 region         896
+ chunking        4154 region         128
+ grid%predict_end         528        2811        4195
+ chunking        5539 region         928
+ grid%predict_end         528        4196        5580
+ new state        5540 region         800
+ new state        5540 region         384
+ chunking        4154 region         512
+ grid%predict_end         528        2811        4195
+ new state        5540 region         416
+ new state        5540 region         928
+ new state        4155 region         128
+ new state        4155 region         512
+ chunking        8309 region         288
+ grid%predict_end         396        6966        8350
+ chunking        8309 region         864
+ grid%predict_end         396        6966        8350
+ chunking        8309 region         672
+ grid%predict_end         396        6966        8350
+ chunking        8309 region          96
+ grid%predict_end         396        6966        8350
+ chunking        6924 region         192
+ grid%predict_end         396        5581        6965
+ chunking        8309 region        1056
+ grid%predict_end         396        6966        8350
+ chunking        8309 region         480
+ grid%predict_end         396        6966        8350
+ chunking        6924 region          32
+ grid%predict_end         528        5581        6965
+ chunking        6924 region         736
+ grid%predict_end         528        5581        6965
+ new state        8310 region         288
+ chunking        6924 region         576
+ grid%predict_end         396        5581        6965
+ chunking        6924 region         992
+ grid%predict_end         528        5581        6965
+ new state        8310 region         864
+ new state        8310 region         672
+ chunking        6924 region         352
+ grid%predict_end         528        5581        6965
+ chunking        6924 region        1120
+ grid%predict_end         528        5581        6965
+ chunking        6924 region         768
+ new state        8310 region          96
+ grid%predict_end         396        5581        6965
+ chunking        6924 region         608
+ grid%predict_end         528        5581        6965
+ chunking        6924 region         160
+ grid%predict_end         528        5581        6965
+ new state        8310 region        1056
+ chunking        6924 region         544
+ grid%predict_end         528        5581        6965
+ new state        8310 region         480
+ chunking        6924 region         224
+ new state        6925 region          32
+ grid%predict_end         528        5581        6965
+ chunking        6924 region           0
+ new state        6925 region         192
+ grid%predict_end         396        5581        6965
+ new state        6925 region         736
+ chunking        6924 region         960
+ grid%predict_end         396        5581        6965
+ chunking        5539 region         448
+ grid%predict_end         528        4196        5580
+ new state        6925 region         992
+ chunking        5539 region          64
+ grid%predict_end         528        4196        5580
+ new state        6925 region         352
+ chunking        5539 region         256
+ grid%predict_end         528        4196        5580
+ new state        6925 region         576
+ new state        6925 region        1120
+ new state        6925 region         608
+ new state        6925 region         768
+ new state        6925 region         160
+ new state        6925 region         544
+ chunking        5539 region         704
+ new state        6925 region         224
+ chunking        6924 region         384
+ grid%predict_end         528        4196        5580
+ grid%predict_end         396        5581        6965
+ chunking        6924 region         800
+ new state        6925 region           0
+ grid%predict_end         528        5581        6965
+ chunking        6924 region         416
+ grid%predict_end         528        5581        6965
+ chunking        5539 region        1024
+ new state        6925 region         960
+ grid%predict_end         528        4196        5580
+ new state        5540 region         448
+ chunking        5539 region         320
+ grid%predict_end         528        4196        5580
+ new state        5540 region         256
+ new state        5540 region          64
+ chunking        5539 region         832
+ grid%predict_end         528        4196        5580
+ chunking        5539 region        1088
+ grid%predict_end         528        4196        5580
+ chunking        6924 region         928
+ grid%predict_end         528        5581        6965
+ chunking        5539 region         640
+ grid%predict_end         528        4196        5580
+ chunking        5539 region         896
+ new state        5540 region         704
+ grid%predict_end         528        4196        5580
+ new state        6925 region         384
+ new state        6925 region         800
+ new state        6925 region         416
+ new state        5540 region        1024
+ new state        5540 region         320
+ new state        5540 region         832
+ new state        5540 region        1088
+ chunking        9694 region         288
+ new state        6925 region         928
+ grid%predict_end         396        8351        9735
+ new state        5540 region         640
+ chunking        9694 region         864
+ grid%predict_end         396        8351        9735
+ chunking        9694 region         672
+ grid%predict_end         396        8351        9735
+ new state        5540 region         896
+ chunking        9694 region          96
+ grid%predict_end         396        8351        9735
+ chunking        9694 region        1056
+ grid%predict_end         396        8351        9735
+ chunking        9694 region         480
+ grid%predict_end         396        8351        9735
+ chunking        5539 region         128
+ grid%predict_end         528        4196        5580
+ new state        9695 region         288
+ new state        9695 region         864
+ chunking        5539 region         512
+ grid%predict_end         528        4196        5580
+ new state        9695 region         672
+ new state        9695 region          96
+ chunking        8309 region         192
+ grid%predict_end         396        6966        8350
+ chunking        8309 region          32
+ grid%predict_end         528        6966        8350
+ new state        9695 region        1056
+ new state        9695 region         480
+ chunking        8309 region         736
+ grid%predict_end         528        6966        8350
+ new state        5540 region         128
+ chunking        8309 region         992
+ grid%predict_end         528        6966        8350
+ chunking        8309 region         576
+ grid%predict_end         396        6966        8350
+ new state        5540 region         512
+ chunking        8309 region         352
+ grid%predict_end         528        6966        8350
+ chunking        8309 region        1120
+ grid%predict_end         528        6966        8350
+ chunking        8309 region         768
+ grid%predict_end         396        6966        8350
+ chunking        8309 region         608
+ grid%predict_end         528        6966        8350
+ new state        8310 region          32
+ chunking        8309 region         160
+ grid%predict_end         528        6966        8350
+ new state        8310 region         192
+ chunking        8309 region           0
+ chunking        8309 region         544
+ grid%predict_end         528        6966        8350
+ grid%predict_end         396        6966        8350
+ chunking        8309 region         224
+ grid%predict_end         528        6966        8350
+ new state        8310 region         736
+ chunking        8309 region         960
+ grid%predict_end         396        6966        8350
+ new state        8310 region         992
+ new state        8310 region         352
+ new state        8310 region        1120
+ new state        8310 region         576
+ new state        8310 region         608
+ new state        8310 region         160
+ new state        8310 region         768
+ new state        8310 region         544
+ new state        8310 region           0
+ new state        8310 region         224
+ chunking        8309 region         384
+ grid%predict_end         396        6966        8350
+ chunking        8309 region         416
+ new state        8310 region         960
+ grid%predict_end         528        6966        8350
+ chunking       11079 region         288
+ chunking        8309 region         800
+ grid%predict_end         396        9736       11120
+ grid%predict_end         528        6966        8350
+ chunking        6924 region         448
+ grid%predict_end         528        5581        6965
+ chunking       11079 region         864
+ grid%predict_end         396        9736       11120
+ chunking       11079 region         672
+ grid%predict_end         396        9736       11120
+ chunking        8309 region         928
+ chunking       11079 region          96
+ grid%predict_end         528        6966        8350
+ grid%predict_end         396        9736       11120
+ chunking        6924 region          64
+ chunking        6924 region         256
+ grid%predict_end         528        5581        6965
+ grid%predict_end         528        5581        6965
+ chunking       11079 region        1056
+ grid%predict_end         396        9736       11120
+ chunking       11079 region         480
+ grid%predict_end         396        9736       11120
+ new state        8310 region         416
+ new state        8310 region         384
+ new state       11080 region         288
+ new state        8310 region         800
+ new state       11080 region         864
+ chunking        6924 region         704
+ grid%predict_end         528        5581        6965
+ new state       11080 region         672
+ new state        6925 region         448
+ new state        8310 region         928
+ chunking        6924 region        1024
+ new state       11080 region          96
+ grid%predict_end         528        5581        6965
+ new state        6925 region          64
+ new state        6925 region         256
+ new state       11080 region        1056
+ new state       11080 region         480
+ chunking        6924 region         320
+ grid%predict_end         528        5581        6965
+ chunking        6924 region         832
+ chunking        6924 region        1088
+ grid%predict_end         528        5581        6965
+ grid%predict_end         528        5581        6965
+ chunking        6924 region         640
+ grid%predict_end         528        5581        6965
+ new state        6925 region         704
+ chunking        6924 region         896
+ grid%predict_end         528        5581        6965
+ chunking        9694 region         192
+ grid%predict_end         396        8351        9735
+ chunking        9694 region          32
+ new state        6925 region        1024
+ grid%predict_end         528        8351        9735
+ chunking        9694 region         736
+ new state        6925 region         832
+ grid%predict_end         528        8351        9735
+ new state        6925 region         320
+ new state        6925 region        1088
+ chunking        9694 region         992
+ grid%predict_end         528        8351        9735
+ new state        6925 region         640
+ chunking        9694 region         576
+ grid%predict_end         396        8351        9735
+ chunking        9694 region         352
+ grid%predict_end         528        8351        9735
+ new state        6925 region         896
+ chunking        9694 region        1120
+ grid%predict_end         528        8351        9735
+ new state        9695 region         192
+ new state        9695 region          32
+ chunking        9694 region         608
+ chunking        9694 region         768
+ chunking        9694 region           0
+ grid%predict_end         528        8351        9735
+ chunking        9694 region         160
+ grid%predict_end         396        8351        9735
+ grid%predict_end         396        8351        9735
+ grid%predict_end         528        8351        9735
+ chunking        9694 region         544
+ grid%predict_end         528        8351        9735
+ new state        9695 region         736
+ chunking        9694 region         224
+ grid%predict_end         528        8351        9735
+ chunking        9694 region         960
+ grid%predict_end         396        8351        9735
+ chunking        6924 region         512
+ new state        9695 region         992
+ chunking       12464 region         288
+ grid%predict_end         528        5581        6965
+ grid%predict_end         396       11121       12505
+ chunking       12464 region         864
+ chunking        6924 region         128
+ new state        9695 region         352
+ grid%predict_end         396       11121       12505
+ grid%predict_end         528        5581        6965
+ new state        9695 region        1120
+ chunking       12464 region         672
+ new state        9695 region         576
+ grid%predict_end         396       11121       12505
+ new state        9695 region         608
+ new state        9695 region         160
+ new state        9695 region         544
+ chunking       12464 region          96
+ grid%predict_end         396       11121       12505
+ new state        9695 region         768
+ new state        9695 region           0
+ new state        9695 region         224
+ chunking       12464 region        1056
+ grid%predict_end         396       11121       12505
+ chunking       12464 region         480
+ grid%predict_end         396       11121       12505
+ new state        9695 region         960
+ new state       12465 region         288
+ new state        6925 region         512
+ new state       12465 region         864
+ chunking        9694 region         416
+ grid%predict_end         528        8351        9735
+ chunking        9694 region         384
+ grid%predict_end         396        8351        9735
+ new state       12465 region         672
+ new state        6925 region         128
+ new state       12465 region          96
+ chunking        9694 region         800
+ grid%predict_end         528        8351        9735
+ new state       12465 region        1056
+ new state       12465 region         480
+ chunking        9694 region         928
+ grid%predict_end         528        8351        9735
+ new state        9695 region         416
+ new state        9695 region         384
+ chunking        8309 region         448
+ new state        9695 region         800
+ grid%predict_end         528        6966        8350
+ new state        9695 region         928
+ chunking        8309 region          64
+ grid%predict_end         528        6966        8350
+ chunking        8309 region         256
+ grid%predict_end         528        6966        8350
+ chunking       11079 region          32
+ chunking       11079 region         192
+ grid%predict_end         528        9736       11120
+ grid%predict_end         396        9736       11120
+ chunking       11079 region         736
+ grid%predict_end         528        9736       11120
+ new state        8310 region         448
+ chunking        8309 region         704
+ grid%predict_end         528        6966        8350
+ chunking       13849 region         288
+ grid%predict_end         396       12506       13890
+ chunking        8309 region        1024
+ grid%predict_end         528        6966        8350
+ chunking       11079 region         992
+ new state        8310 region          64
+ grid%predict_end         528        9736       11120
+ chunking       13849 region         864
+ grid%predict_end         396       12506       13890
+ new state        8310 region         256
+ chunking       11079 region         352
+ new state       11080 region          32
+ grid%predict_end         528        9736       11120
+ chunking       13849 region         672
+ new state       11080 region         192
+ grid%predict_end         396       12506       13890
+ chunking       11079 region        1120
+ chunking       11079 region         576
+ grid%predict_end         528        9736       11120
+ grid%predict_end         396        9736       11120
+ chunking       11079 region         608
+ chunking        8309 region         832
+ chunking        8309 region        1088
+ grid%predict_end         528        9736       11120
+ chunking       11079 region         160
+ grid%predict_end         528        9736       11120
+ grid%predict_end         528        6966        8350
+ new state       11080 region         736
+ chunking       13849 region          96
+ grid%predict_end         528        6966        8350
+ chunking        8309 region         320
+ grid%predict_end         396       12506       13890
+ grid%predict_end         528        6966        8350
+ chunking       11079 region         544
+ chunking       11079 region         768
+ grid%predict_end         528        9736       11120
+ grid%predict_end         396        9736       11120
+ chunking       13849 region        1056
+ grid%predict_end         396       12506       13890
+ chunking       11079 region           0
+ chunking       11079 region         224
+ grid%predict_end         396        9736       11120
+ grid%predict_end         528        9736       11120
+ chunking       13849 region         480
+ new state        8310 region         704
+ grid%predict_end         396       12506       13890
+ new state       13850 region         288
+ new state       11080 region         992
+ new state       13850 region         864
+ chunking       11079 region         960
+ grid%predict_end         396        9736       11120
+ new state        8310 region        1024
+ chunking        8309 region         896
+ new state       11080 region         352
+ grid%predict_end         528        6966        8350
+ chunking        8309 region         640
+ new state       13850 region         672
+ grid%predict_end         528        6966        8350
+ new state       11080 region        1120
+ new state       11080 region         576
+ new state       11080 region         608
+ new state       11080 region         160
+ new state        8310 region         832
+ new state       13850 region          96
+ new state        8310 region        1088
+ new state       11080 region         544
+ new state        8310 region         320
+ new state       11080 region         768
+ new state       13850 region        1056
+ new state       11080 region         224
+ new state       13850 region         480
+ new state       11080 region           0
+ new state       11080 region         960
+ new state        8310 region         896
+ new state        8310 region         640
+ chunking       11079 region         416
+ grid%predict_end         528        9736       11120
+ chunking       11079 region         384
+ grid%predict_end         396        9736       11120
+ chunking        8309 region         512
+ grid%predict_end         528        6966        8350
+ chunking       11079 region         800
+ grid%predict_end         528        9736       11120
+ chunking       11079 region         928
+ grid%predict_end         528        9736       11120
+ chunking        8309 region         128
+ grid%predict_end         528        6966        8350
+ new state       11080 region         416
+ new state       11080 region         384
+ new state        8310 region         512
+ chunking       15234 region         288
+ grid%predict_end         396       13891       15275
+ chunking       15234 region         864
+ new state       11080 region         800
+ grid%predict_end         396       13891       15275
+ new state       11080 region         928
+ chunking       12464 region         192
+ chunking       12464 region          32
+ grid%predict_end         396       11121       12505
+ grid%predict_end         528       11121       12505
+ chunking       15234 region         672
+ grid%predict_end         396       13891       15275
+ new state        8310 region         128
+ chunking       12464 region         736
+ grid%predict_end         528       11121       12505
+ chunking       15234 region          96
+ grid%predict_end         396       13891       15275
+ chunking       15234 region        1056
+ grid%predict_end         396       13891       15275
+ new state       15235 region         288
+ chunking       15234 region         480
+ grid%predict_end         396       13891       15275
+ chunking        9694 region         448
+ grid%predict_end         528        8351        9735
+ new state       15235 region         864
+ chunking       12464 region         992
+ grid%predict_end         528       11121       12505
+ new state       12465 region          32
+ new state       15235 region         672
+ chunking       12464 region         352
+ grid%predict_end         528       11121       12505
+ chunking       12464 region        1120
+ new state       12465 region         192
+ grid%predict_end         528       11121       12505
+ new state       12465 region         736
+ new state       15235 region          96
+ chunking       12464 region         576
+ grid%predict_end         396       11121       12505
+ chunking       12464 region         608
+ chunking       12464 region         160
+ grid%predict_end         528       11121       12505
+ grid%predict_end         528       11121       12505
+ new state       15235 region        1056
+ chunking        9694 region          64
+ chunking       12464 region         544
+ grid%predict_end         528       11121       12505
+ grid%predict_end         528        8351        9735
+ new state       15235 region         480
+ chunking        9694 region         256
+ chunking       12464 region         224
+ chunking       12464 region         768
+ grid%predict_end         528        8351        9735
+ grid%predict_end         528       11121       12505
+ grid%predict_end         396       11121       12505
+ new state       12465 region         992
+ new state       12465 region         352
+ chunking       12464 region           0
+ new state        9695 region         448
+ grid%predict_end         396       11121       12505
+ chunking       12464 region         960
+ new state       12465 region        1120
+ grid%predict_end         396       11121       12505
+ new state       12465 region         608
+ new state       12465 region         160
+ new state       12465 region         576
+ chunking        9694 region         704
+ new state       12465 region         544
+ grid%predict_end         528        8351        9735
+ new state        9695 region          64
+ chunking        9694 region        1024
+ grid%predict_end         528        8351        9735
+ new state        9695 region         256
+ new state       12465 region         768
+ new state       12465 region         224
+ new state       12465 region         960
+ new state       12465 region           0
+ chunking        9694 region         832
+ chunking        9694 region        1088
+ grid%predict_end         528        8351        9735
+ grid%predict_end         528        8351        9735
+ chunking        9694 region         320
+ grid%predict_end         528        8351        9735
+ new state        9695 region         704
+ new state        9695 region        1024
+ chunking       12464 region         416
+ grid%predict_end         528       11121       12505
+ chunking        9694 region         896
+ grid%predict_end         528        8351        9735
+ chunking       12464 region         384
+ chunking       16619 region         288
+ grid%predict_end         396       11121       12505
+ grid%predict_end         396       15276       16660
+ chunking       16619 region         864
+ chunking        9694 region         640
+ grid%predict_end         396       15276       16660
+ grid%predict_end         528        8351        9735
+ new state        9695 region         832
+ chunking       16619 region         672
+ new state        9695 region        1088
+ grid%predict_end         396       15276       16660
+ chunking       12464 region         800
+ grid%predict_end         528       11121       12505
+ new state        9695 region         320
+ chunking       12464 region         928
+ grid%predict_end         528       11121       12505
+ chunking       16619 region          96
+ grid%predict_end         396       15276       16660
+ new state       12465 region         416
+ chunking       16619 region        1056
+ grid%predict_end         396       15276       16660
+ new state       16620 region         288
+ chunking       16619 region         480
+ grid%predict_end         396       15276       16660
+ new state        9695 region         896
+ new state       16620 region         864
+ chunking       13849 region          32
+ new state       12465 region         384
+ grid%predict_end         528       12506       13890
+ chunking       13849 region         192
+ grid%predict_end         396       12506       13890
+ new state       16620 region         672
+ new state        9695 region         640
+ new state       12465 region         800
+ chunking       13849 region         736
+ grid%predict_end         528       12506       13890
+ new state       12465 region         928
+ new state       16620 region          96
+ chunking        9694 region         512
+ grid%predict_end         528        8351        9735
+ new state       16620 region        1056
+ new state       16620 region         480
+ new state       13850 region          32
+ chunking       13849 region         992
+ grid%predict_end         528       12506       13890
+ new state       13850 region         192
+ chunking       13849 region         352
+ grid%predict_end         528       12506       13890
+ new state       13850 region         736
+ chunking       13849 region        1120
+ grid%predict_end         528       12506       13890
+ chunking        9694 region         128
+ chunking       13849 region         576
+ grid%predict_end         528        8351        9735
+ grid%predict_end         396       12506       13890
+ chunking       13849 region         608
+ chunking       13849 region         160
+ grid%predict_end         528       12506       13890
+ grid%predict_end         528       12506       13890
+ chunking       13849 region         544
+ grid%predict_end         528       12506       13890
+ new state        9695 region         512
+ chunking       13849 region         768
+ new state       13850 region         992
+ grid%predict_end         396       12506       13890
+ chunking       13849 region         224
+ grid%predict_end         528       12506       13890
+ new state       13850 region         352
+ chunking       13849 region         960
+ grid%predict_end         396       12506       13890
+ new state       13850 region        1120
+ chunking       13849 region           0
+ chunking       11079 region         448
+ grid%predict_end         396       12506       13890
+ grid%predict_end         528        9736       11120
+ new state       13850 region         160
+ new state       13850 region         608
+ new state       13850 region         576
+ new state        9695 region         128
+ new state       13850 region         544
+ chunking       18004 region         288
+ grid%predict_end         396       16661       18045
+ new state       13850 region         224
+ new state       13850 region         768
+ chunking       18004 region         864
+ grid%predict_end         396       16661       18045
+ chunking       11079 region          64
+ grid%predict_end         528        9736       11120
+ new state       13850 region         960
+ chunking       18004 region         672
+ grid%predict_end         396       16661       18045
+ chunking       11079 region         256
+ new state       11080 region         448
+ new state       13850 region           0
+ grid%predict_end         528        9736       11120
+ chunking       18004 region          96
+ grid%predict_end         396       16661       18045
+ new state       18005 region         288
+ chunking       18004 region        1056
+ grid%predict_end         396       16661       18045
+ chunking       13849 region         416
+ grid%predict_end         528       12506       13890
+ new state       18005 region         864
+ chunking       18004 region         480
+ grid%predict_end         396       16661       18045
+ new state       18005 region         672
+ new state       11080 region          64
+ chunking       11079 region        1024
+ grid%predict_end         528        9736       11120
+ chunking       11079 region         704
+ grid%predict_end         528        9736       11120
+ chunking       13849 region         384
+ new state       11080 region         256
+ grid%predict_end         396       12506       13890
+ chunking       13849 region         800
+ grid%predict_end         528       12506       13890
+ new state       18005 region          96
+ chunking       13849 region         928
+ grid%predict_end         528       12506       13890
+ chunking       15234 region          32
+ new state       18005 region        1056
+ grid%predict_end         528       13891       15275
+ new state       13850 region         416
+ new state       18005 region         480
+ chunking       11079 region         832
+ chunking       11079 region        1088
+ grid%predict_end         528        9736       11120
+ chunking       15234 region         192
+ grid%predict_end         528        9736       11120
+ grid%predict_end         396       13891       15275
+ chunking       11079 region         320
+ grid%predict_end         528        9736       11120
+ chunking       15234 region         736
+ new state       11080 region         704
+ grid%predict_end         528       13891       15275
+ new state       11080 region        1024
+ new state       13850 region         384
+ new state       13850 region         800
+ chunking       11079 region         896
+ new state       13850 region         928
+ grid%predict_end         528        9736       11120
+ new state       15235 region          32
+ new state       11080 region         832
+ new state       11080 region        1088
+ new state       15235 region         192
+ chunking       15234 region         992
+ grid%predict_end         528       13891       15275
+ chunking       11079 region         640
+ grid%predict_end         528        9736       11120
+ new state       11080 region         320
+ new state       15235 region         736
+ chunking       15234 region         352
+ grid%predict_end         528       13891       15275
+ chunking       15234 region        1120
+ grid%predict_end         528       13891       15275
+ chunking       15234 region         576
+ grid%predict_end         396       13891       15275
+ chunking       15234 region         160
+ grid%predict_end         528       13891       15275
+ chunking       15234 region         608
+ grid%predict_end         528       13891       15275
+ chunking       15234 region         544
+ chunking       19389 region         288
+ new state       11080 region         896
+ grid%predict_end         528       13891       15275
+ grid%predict_end         396       18046       19430
+ new state       15235 region         992
+ chunking       19389 region         864
+ grid%predict_end         396       18046       19430
+ chunking       15234 region         768
+ grid%predict_end         396       13891       15275
+ chunking       15234 region         224
+ grid%predict_end         528       13891       15275
+ new state       15235 region         352
+ chunking       19389 region         672
+ chunking       15234 region         960
+ grid%predict_end         396       18046       19430
+ new state       11080 region         640
+ new state       15235 region        1120
+ grid%predict_end         396       13891       15275
+ chunking       15234 region           0
+ grid%predict_end         396       13891       15275
+ new state       15235 region         160
+ new state       15235 region         608
+ chunking       11079 region         512
+ new state       15235 region         576
+ grid%predict_end         528        9736       11120
+ chunking       19389 region          96
+ grid%predict_end         396       18046       19430
+ new state       15235 region         544
+ new state       19390 region         288
+ new state       19390 region         864
+ chunking       19389 region        1056
+ grid%predict_end         396       18046       19430
+ new state       15235 region         224
+ chunking       19389 region         480
+ grid%predict_end         396       18046       19430
+ new state       15235 region         768
+ new state       19390 region         672
+ new state       15235 region         960
+ chunking       12464 region         448
+ grid%predict_end         528       11121       12505
+ new state       15235 region           0
+ new state       11080 region         512
+ chunking       11079 region         128
+ grid%predict_end         528        9736       11120
+ new state       19390 region          96
+ new state       19390 region        1056
+ new state       19390 region         480
+ chunking       15234 region         416
+ grid%predict_end         528       13891       15275
+ chunking       15234 region         800
+ grid%predict_end         528       13891       15275
+ chunking       15234 region         384
+ chunking       16619 region          32
+ chunking       12464 region          64
+ grid%predict_end         528       15276       16660
+ new state       12465 region         448
+ grid%predict_end         396       13891       15275
+ grid%predict_end         528       11121       12505
+ new state       11080 region         128
+ chunking       16619 region         192
+ grid%predict_end         396       15276       16660
+ chunking       12464 region         256
+ grid%predict_end         528       11121       12505
+ chunking       15234 region         928
+ chunking       16619 region         736
+ new state       15235 region         416
+ grid%predict_end         528       13891       15275
+ grid%predict_end         528       15276       16660
+ new state       15235 region         800
+ new state       16620 region          32
+ new state       12465 region          64
+ new state       15235 region         384
+ chunking       12464 region        1024
+ chunking       20774 region         288
+ grid%predict_end         396       19431       20815
+ grid%predict_end         528       11121       12505
+ new state       16620 region         192
+ new state       12465 region         256
+ chunking       12464 region         704
+ chunking       20774 region         864
+ grid%predict_end         396       19431       20815
+ grid%predict_end         528       11121       12505
+ chunking       16619 region         992
+ grid%predict_end         528       15276       16660
+ new state       15235 region         928
+ new state       16620 region         736
+ chunking       16619 region         352
+ chunking       20774 region         672
+ grid%predict_end         528       15276       16660
+ grid%predict_end         396       19431       20815
+ chunking       16619 region        1120
+ grid%predict_end         528       15276       16660
+ chunking       16619 region         576
+ grid%predict_end         396       15276       16660
+ chunking       12464 region        1088
+ chunking       16619 region         160
+ chunking       12464 region         832
+ grid%predict_end         528       15276       16660
+ grid%predict_end         528       11121       12505
+ chunking       16619 region         608
+ grid%predict_end         528       11121       12505
+ grid%predict_end         528       15276       16660
+ new state       20775 region         288
+ chunking       20774 region          96
+ grid%predict_end         396       19431       20815
+ new state       20775 region         864
+ chunking       16619 region         544
+ new state       12465 region        1024
+ grid%predict_end         528       15276       16660
+ new state       16620 region         992
+ new state       12465 region         704
+ chunking       12464 region         320
+ grid%predict_end         528       11121       12505
+ chunking       20774 region        1056
+ grid%predict_end         396       19431       20815
+ new state       16620 region         352
+ chunking       20774 region         480
+ chunking       16619 region         224
+ grid%predict_end         396       19431       20815
+ grid%predict_end         528       15276       16660
+ new state       20775 region         672
+ chunking       16619 region         768
+ grid%predict_end         396       15276       16660
+ new state       16620 region        1120
+ chunking       16619 region         960
+ grid%predict_end         396       15276       16660
+ new state       16620 region         160
+ new state       16620 region         608
+ chunking       12464 region         896
+ grid%predict_end         528       11121       12505
+ new state       12465 region         832
+ new state       16620 region         576
+ new state       20775 region          96
+ chunking       16619 region           0
+ new state       12465 region        1088
+ grid%predict_end         396       15276       16660
+ new state       16620 region         544
+ new state       20775 region        1056
+ new state       12465 region         320
+ new state       16620 region         224
+ new state       20775 region         480
+ chunking       12464 region         640
+ grid%predict_end         528       11121       12505
+ new state       16620 region         768
+ new state       16620 region         960
+ new state       12465 region         896
+ new state       16620 region           0
+ new state       12465 region         640
+ chunking       12464 region         512
+ grid%predict_end         528       11121       12505
+ chunking       16619 region         416
+ grid%predict_end         528       15276       16660
+ chunking       18004 region          32
+ grid%predict_end         528       16661       18045
+ chunking       18004 region         192
+ grid%predict_end         396       16661       18045
+ chunking       16619 region         800
+ grid%predict_end         528       15276       16660
+ chunking       22159 region         288
+ grid%predict_end         396       20816       22200
+ chunking       16619 region         384
+ chunking       13849 region         448
+ grid%predict_end         396       15276       16660
+ chunking       22159 region         864
+ grid%predict_end         528       12506       13890
+ grid%predict_end         396       20816       22200
+ chunking       18004 region         736
+ grid%predict_end         528       16661       18045
+ chunking       22159 region         672
+ grid%predict_end         396       20816       22200
+ new state       16620 region         416
+ new state       12465 region         512
+ chunking       16619 region         928
+ new state       18005 region          32
+ grid%predict_end         528       15276       16660
+ new state       16620 region         800
+ new state       22160 region         288
+ chunking       12464 region         128
+ new state       18005 region         192
+ grid%predict_end         528       11121       12505
+ new state       22160 region         864
+ chunking       22159 region          96
+ grid%predict_end         396       20816       22200
+ new state       16620 region         384
+ new state       18005 region         736
+ new state       13850 region         448
+ chunking       18004 region         992
+ grid%predict_end         528       16661       18045
+ chunking       22159 region        1056
+ grid%predict_end         396       20816       22200
+ chunking       22159 region         480
+ chunking       13849 region          64
+ new state       22160 region         672
+ grid%predict_end         396       20816       22200
+ grid%predict_end         528       12506       13890
+ chunking       18004 region         352
+ grid%predict_end         528       16661       18045
+ chunking       18004 region        1120
+ grid%predict_end         528       16661       18045
+ new state       16620 region         928
+ chunking       13849 region         256
+ grid%predict_end         528       12506       13890
+ chunking       18004 region         576
+ chunking       18004 region         160
+ grid%predict_end         396       16661       18045
+ grid%predict_end         528       16661       18045
+ chunking       18004 region         608
+ grid%predict_end         528       16661       18045
+ new state       22160 region          96
+ new state       12465 region         128
+ new state       18005 region         992
+ chunking       18004 region         544
+ new state       22160 region        1056
+ grid%predict_end         528       16661       18045
+ new state       22160 region         480
+ new state       18005 region         352
+ chunking       18004 region         224
+ grid%predict_end         528       16661       18045
+ new state       13850 region          64
+ new state       18005 region        1120
+ chunking       18004 region         768
+ grid%predict_end         396       16661       18045
+ chunking       18004 region         960
+ grid%predict_end         396       16661       18045
+ chunking       13849 region        1024
+ grid%predict_end         528       12506       13890
+ new state       13850 region         256
+ chunking       13849 region         704
+ new state       18005 region         160
+ grid%predict_end         528       12506       13890
+ new state       18005 region         608
+ new state       18005 region         576
+ new state       18005 region         544
+ chunking       18004 region           0
+ grid%predict_end         396       16661       18045
+ new state       18005 region         224
+ new state       18005 region         768
+ new state       18005 region         960
+ chunking       13849 region         832
+ grid%predict_end         528       12506       13890
+ chunking       13849 region        1088
+ grid%predict_end         528       12506       13890
+ new state       13850 region        1024
+ new state       13850 region         704
+ chunking       23544 region         288
+ grid%predict_end         396       22201       23585
+ chunking       13849 region         320
+ grid%predict_end         528       12506       13890
+ chunking       23544 region         864
+ grid%predict_end         396       22201       23585
+ new state       18005 region           0
+ chunking       23544 region         672
+ grid%predict_end         396       22201       23585
+ new state       13850 region         832
+ chunking       13849 region         896
+ grid%predict_end         528       12506       13890
+ chunking       19389 region          32
+ grid%predict_end         528       18046       19430
+ new state       13850 region        1088
+ chunking       19389 region         192
+ grid%predict_end         396       18046       19430
+ new state       23545 region         288
+ chunking       18004 region         416
+ grid%predict_end         528       16661       18045
+ chunking       18004 region         800
+ new state       13850 region         320
+ grid%predict_end         528       16661       18045
+ new state       23545 region         864
+ chunking       19389 region         736
+ grid%predict_end         528       18046       19430
+ chunking       23544 region          96
+ grid%predict_end         396       22201       23585
+ chunking       18004 region         384
+ grid%predict_end         396       16661       18045
+ chunking       23544 region        1056
+ grid%predict_end         396       22201       23585
+ chunking       13849 region         640
+ grid%predict_end         528       12506       13890
+ chunking       23544 region         480
+ grid%predict_end         396       22201       23585
+ new state       23545 region         672
+ new state       19390 region          32
+ new state       13850 region         896
+ new state       18005 region         416
+ new state       19390 region         192
+ new state       18005 region         800
+ new state       19390 region         736
+ new state       23545 region          96
+ chunking       18004 region         928
+ grid%predict_end         528       16661       18045
+ chunking       19389 region         992
+ grid%predict_end         528       18046       19430
+ new state       23545 region        1056
+ new state       18005 region         384
+ new state       23545 region         480
+ chunking       15234 region         448
+ chunking       19389 region         352
+ grid%predict_end         528       13891       15275
+ grid%predict_end         528       18046       19430
+ chunking       13849 region         512
+ grid%predict_end         528       12506       13890
+ new state       13850 region         640
+ chunking       19389 region        1120
+ grid%predict_end         528       18046       19430
+ chunking       19389 region         576
+ grid%predict_end         396       18046       19430
+ new state       18005 region         928
+ chunking       19389 region         160
+ grid%predict_end         528       18046       19430
+ chunking       19389 region         608
+ grid%predict_end         528       18046       19430
+ new state       19390 region         992
+ chunking       19389 region         544
+ grid%predict_end         528       18046       19430
+ new state       19390 region         352
+ new state       13850 region         512
+ chunking       19389 region         960
+ new state       15235 region         448
+ chunking       19389 region         224
+ grid%predict_end         396       18046       19430
+ grid%predict_end         528       18046       19430
+ new state       19390 region        1120
+ chunking       19389 region         768
+ grid%predict_end         396       18046       19430
+ chunking       24929 region         288
+ grid%predict_end         396       23586       24970
+ chunking       15234 region          64
+ grid%predict_end         528       13891       15275
+ new state       19390 region         160
+ new state       19390 region         576
+ new state       19390 region         608
+ chunking       24929 region         864
+ grid%predict_end         396       23586       24970
+ chunking       13849 region         128
+ grid%predict_end         528       12506       13890
+ new state       19390 region         544
+ chunking       15234 region         256
+ grid%predict_end         528       13891       15275
+ chunking       19389 region           0
+ grid%predict_end         396       18046       19430
+ chunking       24929 region         672
+ new state       19390 region         224
+ grid%predict_end         396       23586       24970
+ new state       19390 region         960
+ new state       19390 region         768
+ new state       24930 region         288
+ new state       15235 region          64
+ new state       24930 region         864
+ chunking       15234 region        1024
+ new state       13850 region         128
+ grid%predict_end         528       13891       15275
+ chunking       24929 region          96
+ grid%predict_end         396       23586       24970
+ new state       15235 region         256
+ chunking       24929 region        1056
+ grid%predict_end         396       23586       24970
+ new state       19390 region           0
+ chunking       15234 region         704
+ chunking       20774 region          32
+ grid%predict_end         528       13891       15275
+ grid%predict_end         528       19431       20815
+ new state       24930 region         672
+ chunking       24929 region         480
+ grid%predict_end         396       23586       24970
+ chunking       20774 region         192
+ grid%predict_end         396       19431       20815
+ chunking       20774 region         736
+ grid%predict_end         528       19431       20815
+ chunking       19389 region         800
+ chunking       19389 region         416
+ grid%predict_end         528       18046       19430
+ grid%predict_end         528       18046       19430
+ new state       24930 region          96
+ new state       15235 region        1024
+ new state       24930 region        1056
+ chunking       15234 region         832
+ chunking       15234 region        1088
+ grid%predict_end         528       13891       15275
+ grid%predict_end         528       13891       15275
+ new state       20775 region          32
+ new state       24930 region         480
+ chunking       19389 region         384
+ new state       15235 region         704
+ grid%predict_end         396       18046       19430
+ new state       20775 region         192
+ chunking       15234 region         320
+ grid%predict_end         528       13891       15275
+ new state       20775 region         736
+ new state       19390 region         800
+ new state       19390 region         416
+ chunking       20774 region         992
+ grid%predict_end         528       19431       20815
+ new state       15235 region         832
+ new state       15235 region        1088
+ chunking       19389 region         928
+ grid%predict_end         528       18046       19430
+ new state       19390 region         384
+ chunking       20774 region         352
+ chunking       15234 region         896
+ grid%predict_end         528       19431       20815
+ grid%predict_end         528       13891       15275
+ chunking       20774 region        1120
+ grid%predict_end         528       19431       20815
+ chunking       26314 region         288
+ grid%predict_end         396       24971       26355
+ new state       15235 region         320
+ chunking       20774 region         576
+ grid%predict_end         396       19431       20815
+ chunking       26314 region         864
+ grid%predict_end         396       24971       26355
+ chunking       20774 region         160
+ grid%predict_end         528       19431       20815
+ new state       20775 region         992
+ chunking       20774 region         608
+ grid%predict_end         528       19431       20815
+ new state       19390 region         928
+ chunking       20774 region         544
+ new state       20775 region         352
+ grid%predict_end         528       19431       20815
+ chunking       15234 region         640
+ grid%predict_end         528       13891       15275
+ chunking       26314 region         672
+ grid%predict_end         396       24971       26355
+ chunking       20774 region         960
+ new state       20775 region        1120
+ grid%predict_end         396       19431       20815
+ new state       15235 region         896
+ chunking       20774 region         224
+ grid%predict_end         528       19431       20815
+ chunking       16619 region         448
+ new state       26315 region         288
+ grid%predict_end         528       15276       16660
+ chunking       20774 region         768
+ grid%predict_end         396       19431       20815
+ new state       20775 region         160
+ new state       26315 region         864
+ new state       20775 region         576
+ new state       20775 region         608
+ chunking       26314 region          96
+ grid%predict_end         396       24971       26355
+ chunking       15234 region         512
+ new state       20775 region         544
+ grid%predict_end         528       13891       15275
+ chunking       26314 region        1056
+ grid%predict_end         396       24971       26355
+ new state       15235 region         640
+ new state       26315 region         672
+ chunking       26314 region         480
+ grid%predict_end         396       24971       26355
+ new state       20775 region         960
+ chunking       20774 region           0
+ new state       20775 region         224
+ grid%predict_end         396       19431       20815
+ new state       16620 region         448
+ new state       20775 region         768
+ new state       26315 region          96
+ new state       15235 region         512
+ chunking       22159 region          32
+ grid%predict_end         528       20816       22200
+ new state       26315 region        1056
+ chunking       16619 region          64
+ grid%predict_end         528       15276       16660
+ new state       26315 region         480
+ chunking       22159 region         192
+ grid%predict_end         396       20816       22200
+ new state       20775 region           0
+ chunking       22159 region         736
+ grid%predict_end         528       20816       22200
+ chunking       16619 region         256
+ grid%predict_end         528       15276       16660
+ chunking       15234 region         128
+ grid%predict_end         528       13891       15275
+ chunking       20774 region         800
+ grid%predict_end         528       19431       20815
+ new state       22160 region          32
+ chunking       20774 region         416
+ grid%predict_end         528       19431       20815
+ new state       16620 region          64
+ new state       22160 region         192
+ chunking       20774 region         384
+ grid%predict_end         396       19431       20815
+ chunking       16619 region        1024
+ new state       22160 region         736
+ grid%predict_end         528       15276       16660
+ chunking       27699 region         288
+ grid%predict_end         396       26356       27740
+ new state       16620 region         256
+ chunking       27699 region         864
+ grid%predict_end         396       26356       27740
+ chunking       16619 region         704
+ new state       20775 region         800
+ grid%predict_end         528       15276       16660
+ chunking       22159 region         992
+ grid%predict_end         528       20816       22200
+ new state       15235 region         128
+ new state       20775 region         416
+ chunking       22159 region         352
+ grid%predict_end         528       20816       22200
+ chunking       27699 region         672
+ grid%predict_end         396       26356       27740
+ new state       20775 region         384
+ chunking       20774 region         928
+ fitting         288
+ trying mldivide
+ chunking       22159 region        1120
+ grid%predict_end         528       19431       20815
+ grid%predict_end         528       20816       22200
+ new state       16620 region        1024
+ fitting         864
+ trying mldivide
+ chunking       16619 region        1088
+ chunking       16619 region         832
+ chunking       22159 region         576
+ grid%predict_end         528       15276       16660
+ grid%predict_end         528       15276       16660
+ grid%predict_end         396       20816       22200
+ new state       22160 region         992
+ chunking       22159 region         160
+ grid%predict_end         528       20816       22200
+ new state       16620 region         704
+ chunking       22159 region         608
+ grid%predict_end         528       20816       22200
+ chunking       27699 region          96
+ grid%predict_end         396       26356       27740
+ new state       22160 region         352
+ chunking       22159 region         544
+ grid%predict_end         528       20816       22200
+ fitting         672
+ trying mldivide
+ chunking       27699 region        1056
+ grid%predict_end         396       26356       27740
+ chunking       22159 region         960
+ chunking       27699 region         480
+ new state       20775 region         928
+ chunking       16619 region         320
+ grid%predict_end         396       26356       27740
+ new state       22160 region        1120
+ grid%predict_end         396       20816       22200
+ grid%predict_end         528       15276       16660
+ write_trained_res         288
+ chunking       22159 region         224
+ grid%predict_end         528       20816       22200
+ finish fit
+ cleaning up         288
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         289           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         289           1           2           2           8
+ region,level,res_zstart,res_zend         289           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         289           1           2           5           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ chunking       22159 region         768
+ write_trained_res         864
+ grid%predict_end         396       20816       22200
+ new state       22160 region         160
+ new state       16620 region         832
+ new state       22160 region         576
+ new state       22160 region         608
+ new state       16620 region        1088
+ finish fit
+ cleaning up         864
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         865           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         865           1           2           2           8
+ region,level,res_zstart,res_zend         865           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         865           1           2           5           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ fitting          96
+ trying mldivide
+ new state       22160 region         544
+ fitting        1056
+ trying mldivide
+ chunking       16619 region         896
+ fitting         480
+ grid%predict_end         528       15276       16660
+ trying mldivide
+ write_trained_res         672
+ new state       22160 region         960
+ new state       22160 region         224
+ finish fit
+ cleaning up         672
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         673           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         673           1           2           2           8
+ region,level,res_zstart,res_zend         673           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         673           1           2           5           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ new state       16620 region         320
+ chunking       22159 region           0
+ grid%predict_end         396       20816       22200
+ new state       22160 region         768
+ chunking       18004 region         448
+ chunking       23544 region          32
+ grid%predict_end         528       22201       23585
+ grid%predict_end         528       16661       18045
+ write_trained_res          96
+ write_trained_res        1056
+ finish fit
+ cleaning up          96
+ region,level,input_zstart,nput_zend,inputzchunk,b,t          97           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk          97           1           2           2           8
+ region,level,res_zstart,res_zend          97           1           1           8
+ region,level,input_ystart,input_yend,inputychunk          97           1           2           5           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ chunking       16619 region         640
+ write_trained_res         480
+ grid%predict_end         528       15276       16660
+ chunking       23544 region         192
+ grid%predict_end         396       22201       23585
+ chunking       23544 region         736
+ grid%predict_end         528       22201       23585
+ finish fit
+ cleaning up        1056
+ region,level,input_zstart,nput_zend,inputzchunk,b,t        1057           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk        1057           1           2           2           8
+ region,level,res_zstart,res_zend        1057           1           1           8
+ region,level,input_ystart,input_yend,inputychunk        1057           1           2           5           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ new state       16620 region         896
+ finish fit
+ cleaning up         480
+ region,level,input_zstart,nput_zend,inputzchunk,b,t         481           1           1           8           8 T T
+ region,level,resxchunk,resychunk,reszchunk         481           1           2           2           8
+ region,level,res_zstart,res_zend         481           1           1           8
+ region,level,input_ystart,input_yend,inputychunk         481           1           2           5           4
+ region,level,tdata_yend           3
+ reading era states
+ herhe
+ start_year,end_year        1990        2009
+ new state       23545 region          32
+ chunking       22159 region         800
+ grid%predict_end         528       20816       22200
+ chunking       16619 region         512
+ new state       22160 region           0
+ grid%predict_end         528       15276       16660
+ new state       23545 region         736
+ new state       18005 region         448
+ chunking       22159 region         416
+ grid%predict_end         528       20816       22200
+ new state       23545 region         192
+ new state       16620 region         640
+ new state       22160 region         800
+ chunking       23544 region         992
+ grid%predict_end         528       22201       23585
+ chunking       22159 region         384
+ grid%predict_end         396       20816       22200
+ new state       22160 region         416
+ chunking       18004 region          64
+ chunking       23544 region         352
+ grid%predict_end         528       16661       18045
+ grid%predict_end         528       22201       23585
+ new state       16620 region         512
+ chunking       23544 region        1120
+ grid%predict_end         528       22201       23585
+ chunking       18004 region         256
+ new state       23545 region         992
+ grid%predict_end         528       16661       18045
+ chunking       22159 region         928
+ grid%predict_end         528       20816       22200
+ chunking       23544 region         160
+ grid%predict_end         528       22201       23585
+ chunking       23544 region         608
+ grid%predict_end         528       22201       23585
+ new state       23545 region         352
+ chunking       23544 region         544
+ grid%predict_end         528       22201       23585
+ new state       23545 region        1120
+ new state       22160 region         384
+ new state       18005 region          64
+ chunking       23544 region         576
+ grid%predict_end         396       22201       23585
+ chunking       23544 region         224
+ new state       22160 region         928
+ grid%predict_end         528       22201       23585
+ chunking       18004 region        1024
+ chunking       16619 region         128
+ grid%predict_end         528       16661       18045
+ grid%predict_end         528       15276       16660
+ new state       23545 region         160
+ new state       23545 region         608
+ new state       18005 region         256
+ chunking       23544 region         960
+ grid%predict_end         396       22201       23585
+ new state       23545 region         544
+ chunking       18004 region         704
+ new state       23545 region         224
+ grid%predict_end         528       16661       18045
+ chunking       23544 region         768
+ grid%predict_end         396       22201       23585
+ chunking       24929 region          32
+ grid%predict_end         528       23586       24970
+ new state       23545 region         576
+ new state       18005 region        1024
+ new state       16620 region         128
+ new state       23545 region         960
+ chunking       24929 region         736
+ grid%predict_end         528       23586       24970
+ chunking       18004 region         832
+ chunking       18004 region        1088
+ grid%predict_end         528       16661       18045
+ grid%predict_end         528       16661       18045
+ new state       24930 region          32
+ new state       18005 region         704
+ chunking       23544 region           0
+ new state       23545 region         768
+ grid%predict_end         396       22201       23585
+ chunking       24929 region         192
+ chunking       18004 region         320
+ grid%predict_end         396       23586       24970
+ new state       24930 region         736
+ chunking       23544 region         800
+ grid%predict_end         528       16661       18045
+ grid%predict_end         528       22201       23585
+ chunking       23544 region         416
+ grid%predict_end         528       22201       23585
+ new state       18005 region         832
+ new state       18005 region        1088
+ chunking       24929 region         992
+ grid%predict_end         528       23586       24970
+ new state       23545 region         800
+ chunking       18004 region         896
+ chunking       24929 region         352
+ grid%predict_end         528       16661       18045
+ grid%predict_end         528       23586       24970
+ new state       23545 region           0
+ new state       23545 region         416
+ new state       24930 region         192
+ chunking       19389 region         448
+ grid%predict_end         528       18046       19430
+ new state       18005 region         320
+ chunking       24929 region        1120
+ grid%predict_end         528       23586       24970
+ new state       24930 region         992
+ chunking       24929 region         160
+ chunking       24929 region         608
+ new state       24930 region         352
+ grid%predict_end         528       23586       24970
+ grid%predict_end         528       23586       24970
+ chunking       23544 region         928
+ grid%predict_end         528       22201       23585
+ chunking       23544 region         384
+ grid%predict_end         396       22201       23585
+ new state       24930 region        1120
+ chunking       24929 region         544
+ grid%predict_end         528       23586       24970
+ chunking       18004 region         640
+ new state       18005 region         896
+ grid%predict_end         528       16661       18045
+ chunking       24929 region         224
+ grid%predict_end         528       23586       24970
+ new state       19390 region         448
+ new state       24930 region         160
+ new state       23545 region         928
+ new state       24930 region         608
+ chunking       18004 region         512
+ grid%predict_end         528       16661       18045
+ new state       24930 region         544
+ new state       24930 region         224
+ chunking       26314 region          32
+ chunking       24929 region         576
+ grid%predict_end         528       24971       26355
+ grid%predict_end         396       23586       24970
+ new state       23545 region         384
+ new state       18005 region         640
+ chunking       19389 region          64
+ grid%predict_end         528       18046       19430
+ chunking       24929 region         960
+ grid%predict_end         396       23586       24970
+ chunking       26314 region         736
+ grid%predict_end         528       24971       26355
+ new state       26315 region          32
+ chunking       19389 region         256
+ new state       18005 region         512
+ grid%predict_end         528       18046       19430
+ new state       24930 region         576
+ chunking       24929 region         768
+ grid%predict_end         396       23586       24970
+ new state       19390 region          64
+ new state       26315 region         736
+ new state       24930 region         960
+ chunking       24929 region         800
+ grid%predict_end         528       23586       24970
+ chunking       19389 region        1024
+ grid%predict_end         528       18046       19430
+ new state       19390 region         256
+ chunking       26314 region         992
+ grid%predict_end         528       24971       26355
+ chunking       24929 region         416
+ grid%predict_end         528       23586       24970
+ chunking       26314 region         192
+ grid%predict_end         396       24971       26355
+ new state       24930 region         800
+ chunking       18004 region         128
+ grid%predict_end         528       16661       18045
+ chunking       26314 region         352
+ new state       24930 region         768
+ grid%predict_end         528       24971       26355
+ chunking       24929 region           0
+ grid%predict_end         396       23586       24970
+ chunking       19389 region         704
+ grid%predict_end         528       18046       19430
+ new state       26315 region         992
+ chunking       26314 region        1120
+ grid%predict_end         528       24971       26355
+ new state       24930 region         416
+ new state       19390 region        1024
+ new state       26315 region         352
+ chunking       26314 region         160
+ chunking       26314 region         608
+ grid%predict_end         528       24971       26355
+ grid%predict_end         528       24971       26355
+ new state       26315 region         192
+ chunking       24929 region         928
+ grid%predict_end         528       23586       24970
+ chunking       19389 region         832
+ new state       18005 region         128
+ chunking       19389 region        1088
+ grid%predict_end         528       18046       19430
+ grid%predict_end         528       18046       19430
+ new state       26315 region        1120
+ new state       19390 region         704
+ new state       24930 region           0
+ chunking       26314 region         544
+ grid%predict_end         528       24971       26355
+ chunking       26314 region         224
+ grid%predict_end         528       24971       26355
+ new state       26315 region         160
+ new state       26315 region         608
+0.26user 1.89system 15:02.19elapsed 0%CPU (0avgtext+0avgdata 15332maxresident)k
+0inputs+17280outputs (9major+6837minor)pagefaults 0swaps

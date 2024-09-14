@@ -1,0 +1,26 @@
+MYRANK=000, STDOUTF=NOUT-000
+=============================================
+  LOCAL ENSEMBLE TRANSFORM KALMAN FILTERING  
+                                             
+   LL      EEEEEE  TTTTTT  KK  KK  FFFFFF    
+   LL      EE        TT    KK KK   FF        
+   LL      EEEEE     TT    KKK     FFFFF     
+   LL      EE        TT    KK KK   FF        
+   LLLLLL  EEEEEE    TT    KK  KK  FF        
+                                             
+             WITHOUT LOCAL PATCH             
+                                             
+          Coded by Takemasa Miyoshi          
+  Based on Ott et al (2004) and Hunt (2005)  
+  Tested by Miyoshi and Yamane (2006)        
+=============================================
+              LETKF PARAMETERS               
+ ------------------------------------------- 
+   n_ens        :             40
+   nslots     :              1
+   nbslot     :              1
+   sigma_obs  :     1000000.00
+   sigma_obsv :           0.10
+   sigma_obst :           3.00
+=============================================
+Hello from set_common_speedy
