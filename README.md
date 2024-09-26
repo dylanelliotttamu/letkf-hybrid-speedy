@@ -4,7 +4,7 @@
 
 ![SPEEDY](speedy.png)
 
-This repository contains an implementation of the [local ensemble transform Kalman filter](http://www.sciencedirect.com/science/article/pii/S0167278906004647) (LETKF) for performing data assimilation with the SPEEDY intermediate complexity atmospheric general circulation model. It is basically a copy of Takemasa Miyoshi's [LETKF repository](https://github.com/takemasa-miyoshi/letkf) with some modifications for reducing precision in the forecast model. It was previously a clone of Sam Hatfield's [LETKF-SPEEDY](https://github.com/samhatfield/letkf-speedy) repository where Troy Arcomano's Hybrid model is now included. The DATA directory has been ignored due to storage limitations. 
+This repository contains an implementation of the [local ensemble transform Kalman filter](http://www.sciencedirect.com/science/article/pii/S0167278906004647) (LETKF) for performing data assimilation with the SPEEDY intermediate complexity atmospheric general circulation model. It is basically a copy of Takemasa Miyoshi's [LETKF repository](https://github.com/takemasa-miyoshi/letkf) with some modifications for reducing precision in the forecast model. It was previously a clone of Sam Hatfield's [LETKF-SPEEDY](https://github.com/samhatfield/letkf-speedy) repository but has been adapted with Troy Arcomano's hybrid model (containing SPEEDY as the physics-based model + an ML component). The DATA directory has been ignored due to storage limitations. 
 
 The repository is a standard observing system simulation experiment (OSSE). The model is run once to generate a "nature run", from which synthetic observations are extracted. Then, the LETKF is used to perform data assimilation on these observations every 6 hours.
 
